@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif; 
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Background Image */
+body {
+    background-image: url('dine.jpg'); /* Replace with the correct path */
+    background-size: cover;  /* Ensures the background covers the entire page */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    min-height: 100vh;  /* Ensure the background image covers the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling if elements overflow */
+}
+
+/* Header */
+header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    font-size: 25px;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: rgba(209, 217, 195, 0.179); /* Added transparency to see the background image */
+    backdrop-filter: blur(10px); /* Slight blur for more elegant look */
+}
+
+/* Logo */
+.logo {
+    color: #212529;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navlist {
+    display: flex;
+}
+
+/* Navigation Links */
+.navlist a {
+    color: #262a2e;
+    font-size: 20px;
+    margin-left: 60px;
+    position: relative;  /* Needed for the pseudo-element positioning */
+    padding-bottom: 5px;  /* Adds space for the underline */
+    transition: color 0.3s ease-in-out;  /* Smooth color transition */
+}
+
+.navlist a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;  /* Thickness of the underline */
+    background-color: #cce3de;  /* Color of the underline */
+    transition: width 0.3s ease-in-out;  /* Controls the horizontal expansion */
+}
+
+.navlist a:hover::after {
+    width: 100%;  /* Expands the underline horizontally */
+}
+
+.navlist a:hover {
+    color: #cce3de;  /* Change text color on hover */
+}
+
+/* Tagline Section Styling */
+#tagline {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 5%;   /* Position to the left */
+    transform: translateY(-50%);  /* Adjust for exact vertical centering */
+    color: #fff;
+    text-align: left;
+}
+
+#tagline h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#tagline p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+#tagline .reserve-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange; /* Orange background color for the button */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#tagline .reserve-btn:hover {
+    background-color: #ff7f00; /* Darker orange on hover */
+}
+
+/* Mobile Menu Icon */
+#menu-icon {
+    color: #fff;
+    font-size: 40px;
+    display: none;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 950px) {
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: rgba(9, 9, 85, 0.9); /* Added transparency for a smoother look */
+        display: flex;
+        flex-direction: column;
+        padding: 50px 20px;
+        align-items: center;
+        transition: all 0.55s ease;
+    }
+
+    /* Show menu icon for mobile */
+    #menu-icon {
+        display: block;
+        transition: 0.3s;
+    }
+
+    .navlist a {
+        display: block;
+        margin-left: 0;
+        margin: 15px 0;
+        transition: 0.3s;
+    }
+
+    /* Open the navlist on mobile when clicked */
+    .navlist.open {
+        right: 0;
+        transition: 0.2s;
+    }
+}
