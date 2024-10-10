@@ -16,7 +16,6 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 100px; /* Add space for the fixed header */
 }
 
 /* Header */
@@ -157,10 +156,10 @@ header {
 
 /* Tagline Section Styling */
 #tagline {
-    position: relative; /* Change to relative */
-    top: 20%; /* Adjusted position */
+    position: absolute;
+    top: 75%;
     left: 5%;
-    transform: translateY(0); /* Remove translate */
+    transform: translateY(-50%);
     color: #fff;
     text-align: left;
 }
@@ -194,6 +193,7 @@ header {
     background-color: #fff;
 }
 
+/* Media Queries */
 /* Media Queries */
 
 /* Mobile Phones (max-width: 600px) */
