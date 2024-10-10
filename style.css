@@ -1,20 +1,21 @@
+/* Global Styles */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Josefin Sans", sans-serif; 
+    font-family: "Josefin Sans", sans-serif;
     text-decoration: none;
     list-style: none;
 }
 
 /* Background Image */
 body {
-    background-image: url('dine.jpg'); /* Replace with the correct path */
-    background-size: cover;  /* Ensures the background covers the entire page */
-    background-position: center;  /* Center the image */
-    background-repeat: no-repeat;  /* Prevents the image from repeating */
-    min-height: 100vh;  /* Ensure the background image covers the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling if elements overflow */
+    background-image: url('azalanimage2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -22,7 +23,6 @@ header {
     left: 0;
     position: fixed;
     right: 0;
-    font-size: 25px;
     top: 0;
     z-index: 1000;
     width: 100%;
@@ -30,15 +30,28 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 5%;
-    background-color: rgba(209, 217, 195, 0.179); /* Added transparency to see the background image */
-    backdrop-filter: blur(10px); /* Slight blur for more elegant look */
+    background-color: rgba(209, 217, 195, 0.179);
+    backdrop-filter: blur(10px);
 }
 
-/* Logo */
+/* Container for logo and restaurant description */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo {
-    color: #212529;
-    font-size: 30px;
+    color: yellow;
+    font-size: 50px;
     font-weight: 600;
+}
+
+.rest-tag {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px;
+    font-weight: 400;
 }
 
 /* Navigation */
@@ -48,12 +61,13 @@ header {
 
 /* Navigation Links */
 .navlist a {
-    color: #262a2e;
+    color: yellow;
     font-size: 20px;
+    font-weight: 650;
     margin-left: 60px;
-    position: relative;  /* Needed for the pseudo-element positioning */
-    padding-bottom: 5px;  /* Adds space for the underline */
-    transition: color 0.3s ease-in-out;  /* Smooth color transition */
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
 }
 
 .navlist a::after {
@@ -62,96 +76,230 @@ header {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 3px;  /* Thickness of the underline */
-    background-color: #cce3de;  /* Color of the underline */
-    transition: width 0.3s ease-in-out;  /* Controls the horizontal expansion */
+    height: 3px;
+    background-color: #cce3de;
+    transition: width 0.3s ease-in-out;
 }
 
 .navlist a:hover::after {
-    width: 100%;  /* Expands the underline horizontally */
+    width: 100%;
 }
 
 .navlist a:hover {
-    color: #cce3de;  /* Change text color on hover */
+    color: #cce3de;
+}
+
+.navlist li {
+    display: inline-block;
+}
+
+.navlist button {
+    background-color: orange;
+    color: rgb(17, 17, 17);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 650;
+    margin-left: 40px;
+    margin-top: -1.4%;
+    transition: background-color 0.3s ease;
+}
+
+.navlist button:hover {
+    background-color: #ffa24b;
+    color: #ffffffd7;
+}
+
+/* Menu Icon */
+#menu-icon {
+    color: #fff;
+    font-size: 40px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Keep menu icon on the right side */
+    transition: 0.3s;
+}
+
+/* Menu Icon transform to X */
+#menu-icon.open .bar1 {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+#menu-icon.open .bar2 {
+    opacity: 0;
+}
+
+#menu-icon.open .bar3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 600px) {
+    .navlist button {
+        font-size: 20px;
+        margin: 7px 0;
+        color: yellow;
+        background-color: none;
+    }
 }
 
 /* Tagline Section Styling */
 #tagline {
     position: absolute;
-    top: 50%;  /* Center vertically */
-    left: 5%;   /* Position to the left */
-    transform: translateY(-50%);  /* Adjust for exact vertical centering */
+    top: 75%;
+    left: 5%;
+    transform: translateY(-50%);
     color: #fff;
     text-align: left;
 }
 
 #tagline h1 {
-    font-size: 2.5rem;
+    font-size: 3.0rem;
     font-weight: bold;
 }
 
 #tagline p {
-    font-size: 1.2rem;
-    margin-top: 5px;
-    font-weight: 300;
+    font-size: 2.2rem;
+    margin-top: 10px;
+    font-weight: 400;
 }
 
 #tagline .reserve-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: orange; /* Orange background color for the button */
-    color: #fff;
+    background-color: orange;
+    color: black;
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    margin-bottom: 30px;
 }
 
 #tagline .reserve-btn:hover {
-    background-color: #ff7f00; /* Darker orange on hover */
+    background-color: #fff;
 }
 
-/* Mobile Menu Icon */
-#menu-icon {
-    color: #fff;
-    font-size: 40px;
-    display: none;
-    z-index: 10001;
-    cursor: pointer;
-}
+/* Media Queries */
+/* Media Queries */
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 950px) {
+/* Mobile Phones (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    #tagline {
+        top: 40%;
+    }
+
+    #tagline h1 {
+        font-size: 2rem;
+    }
+
+    #tagline p {
+        font-size: 1.5rem;
+    }
+
+    #tagline .reserve-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin-bottom: 50px;
+    }
+
     .navlist {
         position: absolute;
         top: 100%;
         right: -100%;
-        width: 300px;
+        width: 35%; /* Make it full width on mobile */
         height: 100vh;
-        background-color: rgba(9, 9, 85, 0.9); /* Added transparency for a smoother look */
+        background-color: rgba(5, 5, 26, 0.9);
         display: flex;
-        flex-direction: column;
-        padding: 50px 20px;
-        align-items: center;
+        flex-direction: column; /* Stack items vertically */
+        padding: 50px 20px; /* Padding around the items */
+        align-items: center; /* Center align all items */
         transition: all 0.55s ease;
+        gap: 30px; /* Space between items */
     }
 
-    /* Show menu icon for mobile */
-    #menu-icon {
-        display: block;
-        transition: 0.3s;
+    .navlist.open {
+        right: 0;
+        transition: 0.2s;
     }
 
     .navlist a {
-        display: block;
-        margin-left: 0;
-        margin: 15px 0;
-        transition: 0.3s;
+        margin: 10px 0; /* Add vertical spacing */
     }
 
-    /* Open the navlist on mobile when clicked */
+    .navlist button {
+        margin-top: 20px; /* Add space above button */
+        background-color: orange; /* Ensure background for button */
+        color: rgb(17, 17, 17);
+        padding: 10px 20px; /* Increased padding for better size */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 650;
+    }
+}
+
+/* Custom media query for 994px */
+@media screen and (max-width: 994px) {
+    header {
+        justify-content: center;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #tagline {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    #tagline h1,
+    #tagline p {
+        text-align: center;
+    }
+
+    #tagline .reserve-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 35%; /* Make it full width on tablet */
+        height: 100vh;
+        background-color: rgba(5, 5, 26, 0.9);
+        display: flex;
+        flex-direction: column;
+        padding: 50px 20px;
+        align-items: center; /* Center align all items */
+        transition: all 0.55s ease;
+        gap: 30px; /* Space between items */
+    }
+
+    #menu-icon {
+        display: block; /* Ensure menu icon is displayed */
+    }
+
     .navlist.open {
         right: 0;
         transition: 0.2s;
