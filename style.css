@@ -1,0 +1,307 @@
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Background Image */
+body {
+    background-image: url('azalanimage2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: rgba(209, 217, 195, 0.179);
+    backdrop-filter: blur(10px);
+}
+
+/* Container for logo and restaurant description */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    color: yellow;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.rest-tag {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* Navigation */
+.navlist {
+    display: flex;
+}
+
+/* Navigation Links */
+.navlist a {
+    color: yellow;
+    font-size: 20px;
+    font-weight: 650;
+    margin-left: 60px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navlist a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #cce3de;
+    transition: width 0.3s ease-in-out;
+}
+
+.navlist a:hover::after {
+    width: 100%;
+}
+
+.navlist a:hover {
+    color: #cce3de;
+}
+
+.navlist li {
+    display: inline-block;
+}
+
+.navlist button {
+    background-color: orange;
+    color: rgb(17, 17, 17);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 650;
+    margin-left: 40px;
+    margin-top: -1.4%;
+    transition: background-color 0.3s ease;
+}
+
+.navlist button:hover {
+    background-color: #ffa24b;
+    color: #ffffffd7;
+}
+
+/* Menu Icon */
+#menu-icon {
+    color: #fff;
+    font-size: 40px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Keep menu icon on the right side */
+    transition: 0.3s;
+}
+
+/* Menu Icon transform to X */
+#menu-icon.open .bar1 {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+#menu-icon.open .bar2 {
+    opacity: 0;
+}
+
+#menu-icon.open .bar3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 600px) {
+    .navlist button {
+        font-size: 20px;
+        margin: 7px 0;
+        color: yellow;
+        background-color: none;
+    }
+}
+
+/* Tagline Section Styling */
+#tagline {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: left;
+}
+
+#tagline h1 {
+    font-size: 3.0rem;
+    font-weight: bold;
+}
+
+#tagline p {
+    font-size: 2.2rem;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+#tagline .reserve-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+#tagline .reserve-btn:hover {
+    background-color: #fff;
+}
+
+/* Media Queries */
+/* Media Queries */
+
+/* Mobile Phones (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    #tagline {
+        top: 40%;
+    }
+
+    #tagline h1 {
+        font-size: 2rem;
+    }
+
+    #tagline p {
+        font-size: 1.5rem;
+    }
+
+    #tagline .reserve-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin-bottom: 50px;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 35%; /* Make it full width on mobile */
+        height: 100vh;
+        background-color: rgba(5, 5, 26, 0.9);
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 50px 20px; /* Padding around the items */
+        align-items: center; /* Center align all items */
+        transition: all 0.55s ease;
+        gap: 30px; /* Space between items */
+    }
+
+    .navlist.open {
+        right: 0;
+        transition: 0.2s;
+    }
+
+    .navlist a {
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    .navlist button {
+        margin-top: 20px; /* Add space above button */
+        background-color: orange; /* Ensure background for button */
+        color: rgb(17, 17, 17);
+        padding: 10px 20px; /* Increased padding for better size */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 650;
+    }
+}
+
+/* Custom media query for 994px */
+@media screen and (max-width: 994px) {
+    header {
+        justify-content: center;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #tagline {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    #tagline h1,
+    #tagline p {
+        text-align: center;
+    }
+
+    #tagline .reserve-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 35%; /* Make it full width on tablet */
+        height: 100vh;
+        background-color: rgba(5, 5, 26, 0.9);
+        display: flex;
+        flex-direction: column;
+        padding: 50px 20px;
+        align-items: center; /* Center align all items */
+        transition: all 0.55s ease;
+        gap: 30px; /* Space between items */
+    }
+
+    #menu-icon {
+        display: block; /* Ensure menu icon is displayed */
+    }
+
+    .navlist.open {
+        right: 0;
+        transition: 0.2s;
+    }
+}
