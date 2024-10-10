@@ -5,8 +5,14 @@
     <title>AZALAN WEBSITE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
+
+    <link rel="icon" href="logo.png" type="image/png">
+   
+
+
+
    <!-- css link-->
-   <link rel="stylesheet"  href="style.css">
+   <link rel="stylesheet"  href="Style.css">
    
    
    
@@ -36,20 +42,24 @@
 <body>
     
     <header>
-        <a href = "#home" class = "logo">AZALAN</a>
+        <a href="#home" class="logo">AZALAN
+            <p class="rest-tag">Kamayan Restaurant</p>
+        </a>
         
-        <ul class ="navlist" >
+        <ul class="navlist">
             <li><a href="#home">Home</a></li>
+            <li><a href="#Menu">Menu</a></li>
             <li><a href="#About">About</a></li>
-            <li><a href="#education">Academics</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#sServices">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+            <li><a href="#Reservation">Reservation</a></li>
+            <button>Contact Us</button> 
     
+        </ul>
+            
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
        
-        <div class ="bx bx-menu" id="menu-icon"></div>
-       <script>
+       
+    <script>
         let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist');
 
@@ -59,6 +69,8 @@ menu.onclick = () => {
 };
 </script> 
 
+    
+
     </header>
 
     <section id="tagline">
@@ -66,5 +78,8 @@ menu.onclick = () => {
         <p>Filipino dishes that bring everyone to the table!</p>
         <a href="#reserve" class="reserve-btn">Reserve Now</a>
     </section>
+
+
+    
 </body>
 </html>
