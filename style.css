@@ -1,307 +1,273 @@
-/* Global Styles */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Josefin Sans", sans-serif;
-    text-decoration: none;
-    list-style: none;
-}
-
-/* Background Image */
 body {
-    background-image: url('azalanimage2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
 header {
-    left: 0;
     position: fixed;
-    right: 0;
     top: 0;
-    z-index: 1000;
     width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s;
+    z-index: 1000;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px 5%;
-    background-color: rgba(209, 217, 195, 0.179);
-    backdrop-filter: blur(10px);
-}
-
-/* Container for logo and restaurant description */
-.logo-container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .logo {
-    color: yellow;
-    font-size: 50px;
-    font-weight: 600;
-}
-
-.rest-tag {
-    font-size: 18px;
-    color: #fff;
-    margin-top: 5px;
-    font-weight: 400;
-}
-
-/* Navigation */
-.navlist {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 30px;
 }
 
-/* Navigation Links */
-.navlist a {
-    color: yellow;
-    font-size: 20px;
-    font-weight: 650;
-    margin-left: 60px;
+.logo-name {
+    font-size: 1.8rem; /* Adjusted size */
+    font-weight: bold;
+    color: orange; /* Changed color to orange */
+}
+
+.subtitle {
+    font-size: 0.8rem; /* Adjusted to match logo name length */
+    color: #fff; /* Changed color to orange */
+}
+
+#menu-icon {
+    font-size: 2.0em; /* Increased size */
+    padding-left: 20px;
+    cursor: pointer;
+    color: white; /* Change color to white */
+    transition: margin-left 0.3s; /* Smooth transition */
+    display: none;
+}
+
+#menu-icon.active {
+    margin-left: auto; /* Pushes the icon to the right */
+}
+header nav {
+    display: flex;
+    margin-right: 40px; /* Adjusted to move nav further left */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
     position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease-in-out;
+    margin: 0 15px; /* Space between menu items */
 }
 
-.navlist a::after {
+header nav a {
+    text-decoration: none; /* No underline by default */
+    color: white;
+    padding: 10px 5px; /* Adjust padding for better alignment */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Exclude contact button from the hover effect */
+header nav li:not(:last-child) a:hover {
+    color: rgba(239, 196, 116, 0.879); /* Change text color on hover */
+}
+
+/* Horizontal hover effect for nav menu items */
+header nav li:not(:last-child):hover::after {
     content: '';
+    display: block;
+    height: 2px;
+    background: rgba(248, 202, 123, 0.967); /* Horizontal line color */
+    transition: width 0.3s ease-in-out; /* Transition for hover effect */
+    width: 100%; /* Full width on hover */
     position: absolute;
     left: 0;
-    bottom: 0;
-    width: 0;
-    height: 3px;
-    background-color: #cce3de;
-    transition: width 0.3s ease-in-out;
+    bottom: -5px; /* Position below the text */
 }
 
-.navlist a:hover::after {
-    width: 100%;
+header nav li:not(:last-child)::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: transparent; /* No line when not hovering */
+    transition: width 0.3s ease-in-out; /* Same transition */
+    width: 0; /* No width by default */
 }
 
-.navlist a:hover {
-    color: #cce3de;
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 
-.navlist li {
-    display: inline-block;
+#home {
+    display: grid; /* Use grid layout */
+    place-items: center; /* Center items */
+    background-image: url('azalan bg.png'); /* Your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* No repeat */
+    color: white; /* Text color */
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* To allow absolute positioning for content if needed */
 }
 
-.navlist button {
+.home-content {
+    text-align: center; /* Center text */
+    z-index: 1; /* Ensure content is above the background */
+   
+   margin-top: 100px;
+    padding: 20px;
+    
+}
+.home-content h1 {
+   margin-bottom: -17px;
+}
+
+.home-content p {
+    margin-bottom: 30px;
+    font-style: italic;
+    font-size: 22px;
+ }
+ .home-content h6{
+    margin-top: 80px;
+    font-weight: lighter;
+   
+    
+ }
+
+.reserve-btn {
     background-color: orange;
-    color: rgb(17, 17, 17);
-    padding: 10px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 650;
-    margin-left: 40px;
-    margin-top: -1.4%;
-    transition: background-color 0.3s ease;
-}
-
-.navlist button:hover {
-    background-color: #ffa24b;
-    color: #ffffffd7;
-}
-
-/* Menu Icon */
-#menu-icon {
-    color: #fff;
-    font-size: 40px;
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    right: 20px; /* Keep menu icon on the right side */
-    transition: 0.3s;
-}
-
-/* Menu Icon transform to X */
-#menu-icon.open .bar1 {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-
-#menu-icon.open .bar2 {
-    opacity: 0;
-}
-
-#menu-icon.open .bar3 {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
-.bar {
-    width: 35px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 600px) {
-    .navlist button {
-        font-size: 20px;
-        margin: 7px 0;
-        color: yellow;
-        background-color: none;
-    }
-}
-
-/* Tagline Section Styling */
-#tagline {
-    position: absolute;
-    top: 75%;
-    left: 5%;
-    transform: translateY(-50%);
-    color: #fff;
-    text-align: left;
-}
-
-#tagline h1 {
-    font-size: 3.0rem;
-    font-weight: bold;
-}
-
-#tagline p {
-    font-size: 2.2rem;
-    margin-top: 10px;
-    font-weight: 400;
-}
-
-#tagline .reserve-btn {
-    display: inline-block;
-    margin-top: 20px;
     padding: 10px 20px;
-    background-color: orange;
-    color: black;
+    border-radius: 5px;
+    text-decoration: none; /* No underline on button */
+    color: rgba(0, 0, 0, 0.939);
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-bottom: 30px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
 }
 
-#tagline .reserve-btn:hover {
-    background-color: #fff;
+.reserve-btn:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
 }
 
-/* Media Queries */
-/* Media Queries */
 
-/* Mobile Phones (max-width: 600px) */
-@media screen and (max-width: 600px) {
-    #tagline {
-        top: 40%;
-    }
+.about { background-color: lightgreen; }
+.menu { background-color: lightcoral; }
+.reservation { background-color: lightgoldenrodyellow; }
+.contact { background-color: lightgray; }
 
-    #tagline h1 {
-        font-size: 2rem;
-    }
+#contactBtn {
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color:rgba(0, 0, 0, 0.931);
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s, color 0.3s; /* Added transition for background and color */
+    text-decoration: none; /* No underline on button */
+}
 
-    #tagline p {
-        font-size: 1.5rem;
-    }
+#contactBtn:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
+    background-color: darkorange;
+}
 
-    #tagline .reserve-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-        margin-bottom: 50px;
-    }
-
+header.scrolled {
+    background-color: #1C3720;
+}
+@media screen and (max-width: 780px) {
+    
+    
     .navlist {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 35%; /* Make it full width on mobile */
-        height: 100vh;
-        background-color: rgba(5, 5, 26, 0.9);
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        padding: 50px 20px; /* Padding around the items */
-        align-items: center; /* Center align all items */
-        transition: all 0.55s ease;
-        gap: 30px; /* Space between items */
+        padding-top: 5%;
+        padding-bottom: 5%;
+        display: none; /* Hide nav list by default */
+        flex-direction: column; /* Stack vertically */
+        position: absolute; /* Position it absolutely */
+        top: 50px; /* Adjust based on your header height */
+        left: 0; /* Align to the left */
+        text-align: center;
+        background: #1C3720; /* Background color */
+        width: 100%; /* Full width */
+        height:max-content;
+        gap: 30px;
+
+    } 
+   
+
+     #contactBtn{
+       background-color: transparent;
+    }
+    #contactBtn:hover{
+        background-color: transparent;
+     }
+    
+    
+    .logo {
+        text-align: center; /* Center the logo text */
+        position: absolute; /* Center the logo */
+        left: 50%; /* Start centering from the left */
+        margin:10px;
+        transform: translateX(-50%); /* Adjust for the logo width */
+    }
+    .subtitle
+    {
+        display: none;
     }
 
     .navlist.open {
-        right: 0;
-        transition: 0.2s;
-    }
-
-    .navlist a {
-        margin: 10px 0; /* Add vertical spacing */
-    }
-
-    .navlist button {
-        margin-top: 20px; /* Add space above button */
-        background-color: orange; /* Ensure background for button */
-        color: rgb(17, 17, 17);
-        padding: 10px 20px; /* Increased padding for better size */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: 650;
-    }
-}
-
-/* Custom media query for 994px */
-@media screen and (max-width: 994px) {
-    header {
-        justify-content: center;
-    }
-
-    .logo-container {
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    #tagline {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
-    #tagline h1,
-    #tagline p {
-        text-align: center;
-    }
-
-    #tagline .reserve-btn {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .navlist {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 35%; /* Make it full width on tablet */
-        height: 100vh;
-        background-color: rgba(5, 5, 26, 0.9);
-        display: flex;
-        flex-direction: column;
-        padding: 50px 20px;
-        align-items: center; /* Center align all items */
-        transition: all 0.55s ease;
-        gap: 30px; /* Space between items */
+        display: flex; /* Show nav list when open */
     }
 
     #menu-icon {
-        display: block; /* Ensure menu icon is displayed */
+        display: block; /* Show menu icon */
+       
+        cursor: pointer;
+      }  
+      header{
+        background-color: #1C3720;
     }
+    header nav li:not(:last-child):hover::after {
+        content: none; /* Remove the horizontal line effect on hover */
+    }
+    #home {
+        margin-top: -125px;
+        margin-bottom:-175px;
+        overflow: hidden;
+        background-size: contain; /* Adjust size to fit on smaller screens */
+         }
+    
+.home-content h1 {
+   margin-bottom: -13px;
+   font-size: 20px;
+}
 
-    .navlist.open {
-        right: 0;
-        transition: 0.2s;
+.home-content p {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 13px;
+ }
+    .reserve-btn {
+        background-color: orange;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none; /* No underline on button */
+        color:rgba(0, 0, 0, 0.931);
+        font-size: 0.8rem;
+        margin-bottom: 70px;
+        transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
     }
+     .home-content h6{
+        font-size: 10px;
+        font-weight: lighter;
+        margin-top: 20px;
+     }
+     
 }
