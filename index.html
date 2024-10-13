@@ -42,45 +42,69 @@
 </head>
 <body>
     
-    <header>
-        <a href="#home" class="logo">AZALAN
-            <p class="rest-tag">Kamayan Restaurant</p>
-        </a>
-        
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#Menu">Menu</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Reservation">Reservation</a></li>
-            <button>Contact Us</button> 
-    
-        </ul>
-            
-        <div class="bx bx-menu" id="menu-icon"></div>
+    <header id="header">
+        <div class="logo">
+            <span class="logo-name">AZALAN</span>
+            <span class="subtitle">Kamayan Restaurant</span>
+        </div>
+        <div class="menu-icon bx bx-menu" id="menu-icon"></div>
+    </div>
+        <nav>
+            <ul class = "navlist">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact" id="contactBtn">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
-       
-       
+
+    <section id="home" class="section home">
+        <div class="home-content">
+            <h1>Savor the flavor of the tradition</h1>
+            <p>Filipino dishes that bring everyone to the table</p>
+            <a href="#reservation" class="reserve-btn">Reserve Now</a>
+            <h6>Open from 10:00 AM - 9:00 PM</h6>
+        </div>
+    </section>
+    
+    <section id="about" class="section about">About Section</section>
+    <section id="menu" class="section menu">Menu Section</section>
+    <section id="reservation" class="section reservation">Reservation Section</section>
+    <section id="contact" class="section contact">Contact Section</section>
+
     <script>
+        // Scroll effect for header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
         let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist');
 
 menu.onclick = () => {
-    menu.classList.toggle('bx-x');
-    navlist.classList.toggle('open');
+    menu.classList.toggle('bx-x'); // Change icon to 'X'
+    menu.classList.toggle('active'); // Move icon to the right
+    navlist.classList.toggle('open'); // Toggle navigation visibility
 };
-</script> 
-
-    
-
-    </header>
-
-    <section id="tagline">
-        <h1>Savor the flavor of tradition</h1>
-        <p>Filipino dishes that bring everyone to the table!</p>
-        <a href="#reserve" class="reserve-btn">Reserve Now</a>
-    </section>
 
 
-    
+    </script>
 </body>
 </html>
