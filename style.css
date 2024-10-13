@@ -167,7 +167,6 @@ header nav li:not(:last-child)::after {
     padding: 10px 20px;
     border-radius: 5px;
     color:rgba(0, 0, 0, 0.931);
-    font-weight: bold;
     transition: transform 0.2s, background-color 0.3s, color 0.3s; /* Added transition for background and color */
     text-decoration: none; /* No underline on button */
 }
@@ -203,6 +202,7 @@ header.scrolled {
 
      #contactBtn{
        background-color: transparent;
+       color: #fff;
     }
     #contactBtn:hover{
         background-color: transparent;
@@ -252,6 +252,100 @@ header.scrolled {
     margin-bottom: 20px;
     font-style: italic;
     font-size: 13px;
+ }
+    .reserve-btn {
+        background-color: orange;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none; /* No underline on button */
+        color:rgba(0, 0, 0, 0.931);
+        font-size: 0.8rem;
+        margin-bottom: 70px;
+        transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    }
+     .home-content h6{
+        font-size: 10px;
+        font-weight: lighter;
+        margin-top: 20px;
+     }
+     
+}
+
+@media screen and (max-width: 440px) {
+    
+    
+    .navlist {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        display: none; /* Hide nav list by default */
+        flex-direction: column; /* Stack vertically */
+        position: absolute; /* Position it absolutely */
+        top: 50px; /* Adjust based on your header height */
+        left: 0; /* Align to the left */
+        text-align: center;
+        background: #1C3720; /* Background color */
+        width: 100%; /* Full width */
+        height:max-content;
+        gap: 30px;
+
+    } 
+   
+
+     #contactBtn{
+       background-color: transparent;
+       color:#fff
+    }
+    #contactBtn:hover{
+        background-color: transparent;
+     }
+    
+    
+    .logo {
+        text-align: center; /* Center the logo text */
+        position: absolute; /* Center the logo */
+        left: 50%; /* Start centering from the left */
+        margin:10px;
+        transform: translateX(-50%); /* Adjust for the logo width */
+    }
+    .subtitle
+    {
+        display: none;
+    }
+
+    .navlist.open {
+        display: flex; /* Show nav list when open */
+    }
+
+    #menu-icon {
+        display: block; /* Show menu icon */
+       
+        cursor: pointer;
+      }  
+      header{
+        background-color: #1C3720;
+        padding: 10px;
+    }
+    header nav li:not(:last-child):hover::after {
+        content: none; /* Remove the horizontal line effect on hover */
+    }
+    #home {
+        margin-top: 10px;
+       
+        overflow: hidden;
+        background-size: cover; /* Adjust size to fit on smaller screens */
+         }
+    
+.home-content h1 {
+   margin-bottom: 20px;
+   font-size: 30px;
+}
+
+.home-content p {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 13px;
+    display: none;
  }
     .reserve-btn {
         background-color: orange;
