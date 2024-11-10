@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider with Hover Scroll and Preview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    section {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    article {
+      display: flex;
+      width: 200%; /* Ensure the article is wide enough for infinite scroll */
+      transition: transform 2s ease; /* Slower transition duration */
+    }
+
+    div {
+      width: 50%;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      width: 100%;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .modal img {
+      width: 700px; /* Set preview image width to 700px */
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 101;
+      font-size: 24px;
+      transform: translateY(-50%);
+      transition: background 0.3s;
+    }
+
+    button.prev {
+      left: 20px;
+    }
+
+    button.next {
+      right: 20px;
+    }
+
+    button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Hover effect: smooth scroll based on mouse position */
+    section:hover article {
+      transition: transform 2s ease; /* Slower transition (2s) */
+    }
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <article>
+      <div>
+        <ul>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/chapsui.jpg" alt="Image 1" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/lomi.jpg" alt="Image 2" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/chapsui.jpg" alt="Image 3" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/lomi.jpg" alt="Image 4" class="image" /></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/chapsui.jpg" alt="Image 5" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/lomi.jpg" alt="Image 6" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/chapsui.jpg" alt="Image 7" class="image" /></li>
+          <li><img src="file:///C:/Users/Client/Documents/AZALAN%20WEBSITE/lomi.jpg" alt="Image 8" class="image" /></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Preview Modal -->
+    <div id="imagePreviewModal" class="modal">
+      <span class="close">&times;</span>
+      <img id="previewImage" src="" alt="Preview Image">
+      <button class="prev">&lt;</button>
+      <button class="next">&gt;</button>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    let isMouseOver = false;  // Track mouseover status
+
+    // Detect hover direction for scroll movement
+    $('section').on('mousemove', function(event) {
+      if (!isMouseOver) return;  // If mouse is not over section, don't scroll
+
+      let mouseX = event.pageX;
+      let sectionWidth = $(this).width();
+      let moveDistance = (mouseX / sectionWidth) * 150; // Slow down movement by reducing multiplier
+
+      // Apply scroll effect to move the article horizontally
+      $('article').css('transform', `translateX(-${moveDistance}%)`);
+    });
+
+    // Image click to open preview
+    $('.image').click(function() {
+      let src = $(this).attr('src');
+      $('#previewImage').attr('src', src);
+      $('#imagePreviewModal').fadeIn();
+    });
+
+    // Close preview modal
+    $('.close').click(function() {
+      $('#imagePreviewModal').fadeOut();
+    });
+
+    // Next and previous buttons
+    let images = $('.image');
+    let currentIndex = 0;
+
+    $('.next').click(function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      $('#previewImage').attr('src', $(images[currentIndex]).attr('src'));
+    });
+
+    $('.prev').click(function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      $('#previewImage').attr('src', $(images[currentIndex]).attr('src'));
+    });
+
+    // Start scrolling when mouse is over the section
+    $('section').on('mouseenter', function() {
+      isMouseOver = true;
+    });
+
+    // Stop scrolling when mouse leaves the section
+    $('section').on('mouseleave', function() {
+      isMouseOver = false;
+    });
+  </script>
+
+</body>
+</html>
