@@ -14,6 +14,8 @@
 
    <!-- css link-->
    <link rel="stylesheet"  href="style.css">
+   <link rel="stylesheet"  href="footer.css">
+   <link rel="stylesheet"  href="featured-items.css">
    
    
    
@@ -52,10 +54,11 @@
         <nav>
             <ul class = "navlist">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#menu">Meals</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#reservation">Reservation</a></li>
                 <li><a href="#contact" id="contactBtn">Contact Us</a></li>
+              
             </ul>
         </nav>
     </header>
@@ -68,11 +71,150 @@
             <h6>Open from 10:00 AM - 9:00 PM</h6>
         </div>
     </section>
-    
-    <section id="about" class="section about">About Section</section>
-    <section id="menu" class="section menu">Menu Section</section>
+
+    <section class="featured-items">
+      
+        <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1C3720" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,176C320,192,400,192,480,192C560,192,640,192,720,192C800,192,880,192,960,192C1040,192,1120,192,1200,202.7C1280,213,1360,235,1400,245.3L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> <h2 class="title">Featured <span>meals</span></h2>
+          
+        </div>
+
+        <div class="container">
+            <div class="item">
+                <h3 class="item-label">inasal-pecho</h3>
+                <img src="lomi.jpg" alt="Item 1">
+                <p class="price">$29.99</p>
+            </div>
+            <div class="item">
+                <h3 class="item-label">lomi overload</h3>
+                <img src="chapsui.jpg" alt="Item 2">
+                <p class="price">$39.99</p>
+            </div>
+            <div class="item">
+                <h3 class="item-label">pinakbet</h3>
+                <img src="lomi.jpg" alt="Item 3">
+                <p class="price">$49.99</p>
+            </div>
+        </div>
+    </section>
+
+
+  <section id="menu" class="section menu">Menu Section</section>
+
+  <section id="about" class="section about">
+    <div class="about-container">
+        <div class="text-container">
+            <h2>About Us</h2>
+            <p class="sentences">Nestled in the heart of the city, <strong>Taste of Tradition</strong> is a charming restaurant that brings the rich flavors and culinary heritage of our ancestors to life. This cozy establishment prides itself on offering an authentic dining experience, where every dish tells a story.</p>
+            <p class="sentences">The menu features a diverse array of traditional foods, each prepared using time-honored recipes passed down through generations. From savory stews simmered with fragrant herbs to freshly baked bread that fills the air with its warm aroma, every bite evokes nostalgia and comfort.</p>
+            <p class="sentences">Whether you’re savoring the robust flavors of a regional specialty or indulging in a homemade dessert that’s a beloved classic, <strong>Taste of Tradition</strong> offers a unique journey through the culinary landscape of our heritage.</p>
+            
+           
+            <span class="highlight">Join us for an unforgettable dining experience!</span>
+        </div>
+   
+     <div class="images-container">
+        <div class="image image1">
+            <img src="image4.jpg" alt="Image 1" style="width:100%; height:100%;">
+        </div>
+        <div class="image image2">
+            <img src="image1.jpg" alt="Image 2" style="width:100%; height:100%;">
+        </div>
+        <div class="image image5">
+            <img src="image3.png" alt="Image 5" style="width:100%; height:100%;">
+        </div>
+        <div class="image image3">
+            <img src="image2.jpg" alt="Image 3" style="width:100%; height:100%;">
+        </div>
+        <div class="image image4">
+            <img src="image5.jpg" alt="Image 4" style="width:100%; height:100%;">
+        </div>
+       
+    </div>
+</section>
+
+
     <section id="reservation" class="section reservation">Reservation Section</section>
-    <section id="contact" class="section contact">Contact Section</section>
+    <section id="contact" class="section contact">
+        <div class="main-container">
+            <div class="contact-container">
+                <h2 class="git">Get in Touch</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message Us</label>
+                        <textarea id="message" name="message" rows="5" > </textarea>
+                    </div>
+                    <button class="submit-btn" type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="right-content">
+                <h5>DINE WITH US AND SAVOR THE FLAVOR OF TRADITION</h5>
+                <p class="tagline">Tagline here</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer Section -->
+     <footer id="footer">
+        <!-- Footer Columns -->
+        <div class="footer-content">
+            <!-- Contact Us Column -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Pueblo de Panay Township, Roxas City, Capiz, 5800</p>
+                <p><i class="fas fa-phone"></i> 0991-345-777</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:azalankamayan@gmail.com">azalankamayan@gmail.com</a></p>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Developer Column -->
+            <div class="footer-column">
+                <h3>Developer</h3>
+                <p>Redgie-RR Bula</p>
+                <p>Jane Dela Torre</p>
+                <p>Christine Leilani Delay</p>
+                <p>Jevy Farofaldane</p>
+            </div>
+
+            <!-- QR Code and Title Column -->
+            <div class="footer-column" style="text-align: center;">
+                <img src="frame.png" alt="QR Code" class="qr-code">
+                <h2>AZALAN</h2>
+                <p class="subtitle">KAMAYAN RESTAURANT</p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section with Social Icons Positioned to the Right on Larger Screens -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; azalankamayanrestaurant2024
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://foodpanda.com" target="_blank"><i class="fas fa-utensils"></i></a>
+            </div>
+        </div>
+    </footer>
+
 
     <script>
         // Scroll effect for header
