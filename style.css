@@ -1,14 +1,17 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    max-width:100% ;
+    overflow-x: hidden;
 }
+
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+   
     transition: background-color 0.3s;
     z-index: 1000;
     display: flex;
@@ -18,8 +21,8 @@ header {
 
 .logo {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stack logo and subtitle vertically */
+    align-items: center; /* Center items horizontally */
     padding: 8px 30px;
 }
 
@@ -27,13 +30,16 @@ header {
     font-size: 2rem;
     font-weight: bold;
     color: orange;
+    text-decoration: none; /* Remove underline */
 }
 
 .subtitle {
-    font-size: 0.9rem;
-    color: #fff;
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Change color to match your theme */
+    font-size: 0.9rem; /* Adjust font size as needed */
+    margin-top: -2px; /* Add space between logo and subtitle */
+    transition: color 0.3s; /* Optional hover effect */
 }
-
 #menu-icon {
     font-size: 2.5rem;
     padding-left: 20px;
@@ -48,22 +54,23 @@ header {
 }
 
 header nav {
-    display: flex;
-    margin-right: 40px;
+    display: flex; /* Flex container for nav */
+    align-items: center; /* Center items vertically */
+    margin-right: 40px; /* Adjust spacing */
 }
 
 header nav ul {
     list-style: none;
-    display: flex;
+    display: flex; /* Arranges the list items in a row */
     padding: 0;
     margin: 0;
 }
-
 header nav li {
+    position: relative; /* Enable absolute positioning for the pseudo-element */
     margin: 0 15px;
 }
 
-header nav a {
+header nav li a {
     text-decoration: none;
     color: white;
     padding: 10px 5px;
@@ -71,21 +78,26 @@ header nav a {
     font-size: 1rem;
 }
 
-header nav li:not(:last-child) a:hover {
-    color: rgba(239, 196, 116, 0.879);
+header nav li a:hover {
+    color: rgba(239, 196, 116, 0.879); /* Change color on hover */
+}
+
+header nav li::after {
+    content: '';
+    display: block;
+    height: 2px; /* Height of the underline */
+    background: rgba(248, 202, 123, 0.967); /* Color of the underline */
+    width: 0; /* Start with zero width */
+    position: absolute; /* Position it below the link */
+    left: 0;
+    bottom: -5px; /* Space between link and underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
 }
 
 header nav li:not(:last-child):hover::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: rgba(248, 202, 123, 0.967);
-    transition: width 0.3s ease-in-out;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
+    width: 100%; /* Expand width on hover */
 }
+
 
 .section {
     height: 100vh;
@@ -100,7 +112,7 @@ header nav li:not(:last-child):hover::after {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
-    background-image: url('azalan\ bg\ \(1\).png');
+    background-image: url('azalan bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,9 +164,354 @@ header nav li:not(:last-child):hover::after {
 }
 
 
+
+.featured-items {
+    background-color: #E9ECD4;
+    padding: 20px;
+    position: relative; /* Change from relative to fixed */
+    bottom: 0; /* Position it at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    transition: transform 0.3s ease; /* Smooth transition for the rise effect */
+}
+.svg-container {
+    display: flex;
+    justify-content: center; /* Center the SVG */
+     position:relative;
+    margin: -3rem -2rem 5px -2rem;
+    padding-top: -1rem;
+
+}
+
+
+.rise {
+    transform: translate(-50%, 20%); /* Move up when scrolled */}
+.title {
+    position: absolute; /* Position the title absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the width and height */
+    font-size: 3rem;
+    margin-top:-3rem;
+    color: #fff;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-weight: bold; /* Poppins bold style for "Featured" */
+    z-index: 1; /* Ensure the text is on top of the SVG */
+}
+/*
+.title span {
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    text-transform: lowercase;
+    font-size: 3.5rem;
+  
+}*/
+
+
+
+.container {
+    display: flex;
+    margin-top: -1.5rem;
+    justify-content: center; /* Center items */
+    
+}
+
+.item {
+    text-align: center;
+    width: 230px; /* Fixed width for each item */
+    margin-right: 2rem; /* Set right margin for the gap */
+    opacity: 0; /* Start hidden */
+    transform: translateY(30px); /* Start slightly lower */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+
+}.item.show {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+}
+
+.item:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+.item img {
+    width: 100%; /* Responsive width */
+    height: 180px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area */
+    border-radius: 8px; /* Optional: add some border radius */
+
+}
+
+.item-label {
+    font-size: 1.2em;
+    color: #1C3720;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #1C3720;
+    font-size: 1em;
+}
+
+/* Section Backgrounds */
+.about-us {
+    position: relative; /* Create positioning context */
+    background-image: url('about.png'); /* Set your image path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    height: 90vh; /* Set height as needed */
+    overflow: hidden; /* Ensure no overflow */
+    
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px; /* Add padding for spacing */
+
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c372065; /* Dark overlay with transparency */
+    z-index: 1; /* Place above the background image */
+}
+
+.about-us h1 {
+    position: relative; /* Position context for the heading */
+    z-index: 2; /* Ensure heading is above the overlay */
+    color: #E9ECD4; /* Change text color for contrast */
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 3px; /* Space below the heading */
+    font-size: 4rem;
+  padding-top: 2rem;
+    padding-left: 60px;
+}
+
+.about-content {
+    display: flex; /* Create a two-column layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align items to the start of each column */
+    position: relative; /* Position context for columns */
+    z-index: 2; /* Ensure content is above the overlay */
+    max-width: 1200px; /* Optional: limit max width */
+    width: 100%; /* Ensure it takes full width */
+    
+}
+.left-column {
+    flex: 1; /* Allow the left column to take available space */
+    margin: 3rem 3rem 0 0; /* Space between columns */
+}
+
+.text-box {
+    background-color: rgba(255, 166, 0, 0.81); /* Orange background for the text box */
+    padding: 20px; /* Padding inside the text box */
+    border-radius: 3px; /* Rounded corners */
+    color:  #1C3720; /* Text color */
+    margin:2.8rem 3rem 0 -2rem;
+}
+
+.text-box p{
+    padding: 20px;
+    font-size: large;
+}
+.learn-more {
+    display: inline-block; /* Make it a block-level element */
+    margin-top: 30px; /* Space above the button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: orange; /* Change background on hover */
+    color: black; /* Change text color on hover */
+    text-decoration: none; /* Remove underline */
+    position: absolute;
+    left:10%;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.learn-more:hover {
+   
+    background-color: black; /* Black background */
+    color: orange; /* Orange text */
+}
+
+.right-column {
+    flex: 1; /* Allow the right column to take available space */
+  margin: 30px -40px 0 20px; /* Add margin to the left for spacing */
+
+  
+}.images {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+   
+    margin-top: -2.5rem;
+}
+
+.images img {
+    border-radius: 5px; /* Optional: add border radius */
+    border: 2px solid orange; /* Add border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.img-1 {
+    width: 180px; /* Specific width */
+    height: 205px; /* Specific height */
+    
+    margin-bottom: -2.1rem;
+    margin-left: 4.5rem;
+}
+
+.img-2 {
+    width: 189px; /* Specific width */
+    height: 220px; /* Specific height */
+    margin-top:1.5rem;
+    margin-bottom: -3px;
+}
+
+.img-3 {
+    width: 250px; /* Specific width */
+    height: 190px; /* Specific height */
+    margin-top: -1rem;
+   
+}
+
+.img-4 {
+    margin-top:1.5rem;
+    width: 190px; /* Specific width */
+    height: 150px; /* Specific height */
+   
+}
+
 .menu { background-color: lightcoral; }
 .reservation { background-color: lightgoldenrodyellow; }
-.contact { background-color: lightgray; }
+.contact-us-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    width: 100%;
+    max-width: 1200px; /* Maximum width for better layout */
+    margin: 2rem 0 2rem 3rem; /* Center the section */
+    border: 1px solid #ccc; /* Optional: add a border to the section */
+    border-radius: 5px; /* Optional: add border-radius */
+    background-color:lightgoldenrodyellow; /* Optional: background color */
+    padding: 20px; /* Padding around the content */
+}
+.column {
+    box-sizing: border-box;
+    padding: 20px;
+}
+.contact-form-column {
+    flex: 0 0 60%; /* 60% width for the contact form */
+    max-width: 60%;
+}
+.info-column {
+    flex: 0 0 40%; /* 40% width for the info */
+    max-width: 40%;
+    background-color: orange; /* Orange background color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+}
+.formbox{
+    background-color: #1C3720;
+    padding:30px;
+    border-radius: 10px;
+}
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+.name-container {
+    display: flex;
+    justify-content: space-between;
+}
+.name-container .input-container {
+    flex: 0 0 48%; /* Allow some space between the two inputs */
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+input:focus, textarea:focus {
+    border-color: #28a745; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s ease all;
+    color: #999; /* Default label color */
+    pointer-events: none; /* Prevent label from capturing clicks */
+}
+input:focus + label,
+        input:not(:placeholder-shown) + label,
+        textarea:focus + label,
+        textarea:not(:placeholder-shown) + label {
+            top: -15px; /* Move label up */
+            left: 10px; /* Keep label aligned */
+            font-size: 12px; /* Smaller font size */
+            color: #E9ECD4; /* Change label color on focus */
+        }
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* For animation */
+    width: 100%; /* Make the button full width */
+}
+button:hover {
+    background-color: #218838;
+}
+.sending {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #28a745;
+    display: none; /* Hidden by default */
+}
+.success-message {
+    display: none;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #28a745;
+}
+.contact-info {
+    margin-top: 20px; /* Space above contact info */
+}
+.social-icons {
+    display: flex;
+    margin-top: 10px; /* Space above social icons */
+}
+.social-icons a {
+    color: white; /* Icon color */
+    margin-right: 15px; /* Space between icons */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Icon size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form-column, .info-column {
+        flex: 0 0 100%; /* Full width for both columns */
+        max-width: 100%;
+    }
+    .name-inputs {
+        flex-direction: column; /* Stack name inputs on smaller screens */
+    }
+    .name-inputs div {
+        width: 100%; /* Full width for name input containers */
+        margin-bottom: 10px; /* Space between stacked inputs */
+    }
+}
 
 #contactBtn {
     background-color: orange;
@@ -174,6 +531,19 @@ header nav li:not(:last-child):hover::after {
 
 header.scrolled {
     background-color: #1C3720;
+}
+
+/* Cookie Banner */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
 }
 
 /* Responsive Styles */
@@ -208,7 +578,7 @@ header.scrolled {
     }
 
     .subtitle {
-        display: flex;
+        display: none;
     }
 
     .navlist.open {
@@ -288,7 +658,7 @@ header.scrolled {
     }
 
     .subtitle {
-        display: flex;
+        display: none;
     }
 
     .navlist.open {
@@ -338,204 +708,28 @@ header.scrolled {
         font-weight: bold;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.931);
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* Decreased size */
         margin-bottom: 70px;
         transition: background-color 0.3s, transform 0.2s;
     }
 }
-
-#about{
-    font-family: Arial, sans-serif;
-   background-image:url(dine.jpg);
-   background-repeat: no-repeat;
-   background-size:cover;
-}
-
-
-
-h2 {
-    text-align: center;
-    color: black;
-    margin-top: 5px;
-    
-}
-
-.about-container {
-    display: flex;
-    max-width: 1200px;
-    width: 1200px;
-    padding: 20px;
-    position: relative;
-}
-
-.text-container {
-    background-color: yellow;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: #fff;
-    max-width: 970px;
-    width: 900px;
-    margin-right: 15%;
-    font-size: 20px;
-   
-}
-
-
-.sentences {
-  margin-top: 5px;
-    font-size: 20px;
-    color: black;
-    margin-bottom: 2px;
-}
-
-.images-container {
-    margin-top: auto;
-    margin-right: 20%;
-    position: relative;
-    width: 265px; 
-    height: 500px; 
-}
-
-.image {
-position: absolute;
-width: 150%; 
-height: 45.5%; 
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-overflow: hidden;
-transition: transform 0.3s ease, z-index 0.3s ease;
-}
-.highlight {
-    display: block; 
-    margin-top: 30px; 
-    font-weight: bold; 
-    font-size: 24px;
-    color:black; 
-    text-align: center;
-}
-
-
-.image:hover {
-transform: scale(1.4); 
-z-index: 10; 
-cursor: pointer; 
-}
-
-
-.image1 {
-top: 1%;
-right: 20%;
-}
-
-.image2 {
-top: 1%;
-left: 160%;
-}
-
-.image3 {
-top: 60%;
-left: 160%;
-}
-
-.image4 {
-top: 35%;
-left: 45%;
-}
-
-.image5 {
-
-top: 60%;
-right: 20%;
-}
-
-
-.git {
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-}
-h5{
-    text-align: center;
-    color: rgb(132, 92, 18);
-    font-size: 25px;
-    margin-top: 0%;
-}
-.tagline{
-    font-size:18px;
-    color: black;
-    text-align: center;
-}
-.main-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin-top: 8%;
-    margin-left: 7%;
-    padding: 20px;
-}
-
-.contact-container {
-    background-color: #0b180e;
-    padding: 25px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: #fff;
-    max-width: 930px;
-    width: 550px;
-    margin-right: 10%;
-    font-size: 16px;
-}
-
-.contact-container textarea, 
-.contact-container input {
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #fff;
-    color: #000;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    box-sizing: border-box;
-    font-size: 20px;
+    height: 100px; /* Adjust height of wave */
+    background:#E9ECD4; /* Color of the wave */
+    clip-path: ellipse(80% 100% at 50% 0%); /* Create a wave shape */
+    z-index: 1; /* Place wave below the text */
 }
-
-.contact-container textarea {
-    height: 100px; 
-    resize: vertical;
-}
-.contact-container button {
-    background-color: orange;
-    color: rgba(0, 0, 0, 0.931);    
-    padding: 10px 20px;
-    width: 70%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: rgba(0, 0, 0, 0.931);
-    transition: transform 0.2s, background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-top: 10px;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto; 
-}
-.contact-container button:hover {
-    background-color: rgb(203, 203, 66);
-}
-.right-content {
-    flex: 1;
-    padding: 20px;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-right: auto;
-    max-width: 930px;
-    width: 800px;
-}
+/* }
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height of wave */
+    /*background: #E9ECD4; /* Gradient for blending */
+    /*clip-path: path('M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 C1400,120 1600,0 1800,60 L1800,320 L0,320 Z'); /* Curved shape */
+   /* z-index: 1; /* Below text */
