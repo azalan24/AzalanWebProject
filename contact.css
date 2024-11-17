@@ -1,0 +1,293 @@
+.contact-section {
+    animation: fadeIn 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Fade-in keyframe specific to the contact section */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}   /* Scroll animation for content to rise */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px); /* Start below the original position */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Contact Info and Hours Hover Animation */
+.contact-info, .hours {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.hours:hover {
+    transform: scale(1.05) rotate(-2deg); /* Optional rotation */
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f8f8f8, #FFFFE0, #3d9049,  #1C3720);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; /* Stack form and contact info */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.page-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #2a5a2d;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    font-weight: bold;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    width: 100%;
+    max-width: 500px;  /* Reduced width */
+    background-color: #1C3720;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Space between form and contact info */
+}
+
+.contact-form h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    
+    color: #ffffff;
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Name fields aligned side-by-side */
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.name-field {
+    flex: 1; /* Ensures equal width for First Name and Last Name */
+}
+
+/* Media Query to make name fields stack vertically on small screens */
+@media (max-width: 768px) {
+    .name-fields {
+        flex-direction: column; /* Stack vertically */
+        gap: 15px;
+    }
+    .contact-info {
+        width: 100%; /* Make it occupy the full width on smaller screens */
+        max-width: 500px; /* Prevent it from becoming excessively wide */
+        margin: 0 auto; /* Center-align the contact info */
+    }        
+    .contact-form,
+    .contact-info,
+    .hours {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    /* Stacks the contact info and opening hours vertically */
+    .contact-info-hours {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+    }
+
+    .contact-info {
+        width: 100%; /* Expand to occupy full width */
+        max-width: 500px; /* Same maximum width as the contact form */
+        margin: 0 auto; /* Center the container */
+        }
+
+    .contact-info, .hours {
+        width: 100%; /* Make sections full width */
+        margin-bottom: 20px; /* Space between sections */
+    }
+    .contact-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+/* Contact Info and Hours Section (Positioned Horizontally by Default) */
+.contact-info-hours {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px; /* Add space between form and contact info */
+}
+
+/* Contact Info Styling */
+.contact-info {
+    width: 68%;
+    padding: 25px;
+    max-width: 500px; /* Matches the contact form's max width */
+    background-color: #f8f8f8ab;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* Social Links Styling */
+.social-links {
+list-style-type: none;
+display: flex;
+gap: 15px;
+margin-top: 20px;
+padding: 0;
+}
+
+
+.social-links a {
+display: inline-flex; /* Use flex to center the icon */
+justify-content: center;
+align-items: center;
+font-size: 1.5rem;
+color: white;
+background-color: #66bb6a; /* Lighter green background */
+padding: 15px; /* Ensure the padding makes the circle proportionate */
+border-radius: 50%; /* Makes the link a perfect circle */
+transition: background-color 0.3s ease, transform 0.3s ease;
+width: 10px;
+height: 10px;
+text-decoration: none; /* Remove underline */
+}
+
+.social-links a:hover {
+background-color: #4caf50; /* Slightly darker green on hover */
+
+}
+
+/* Opening Hours Styling */
+.hours {
+    width: 40%;
+    background-color: rgba(242, 242, 242, 0.5); /* Light, semi-transparent background */
+    text-align: center;
+    padding: 15px;
+    height: fit-content;
+    border-radius: 10px; /* Slightly more rounded corners */
+    font-size: 0.9rem;
+    margin-top: 20px;
+    backdrop-filter: blur(10px); /* Adds the blur effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for separation */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+.hours h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.hours p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+.custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-modal-content button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-modal-content button:hover {
+    background-color: #218838;
+}

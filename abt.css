@@ -1,0 +1,124 @@
+    /* Section Styling */
+.text-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px; /* Maintain compact height */
+    background-color: #f8f8f8;
+    overflow: hidden;
+    
+}
+
+/* Container for Text and Image */
+.text-image-section .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  margin: 40px;
+    max-width: 1000px; /* Increase max width slightly */
+    height: auto; /* Adjust height automatically */
+}
+
+/* Text Content */
+.text-image-section .text {
+    flex: 1; /* Takes half the width */
+    padding: 30px; /* Moderate padding for balance */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: orange; /* Text section background */
+    color: #1C3720;
+    height: 400px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem; /* Compact font size */
+}
+
+.text-image-section .text h2 {
+    font-size: 1.6rem; /* Slightly larger headline */
+    margin-bottom: 10px;
+    
+}
+
+.text-image-section .text p {
+    font-size: 0.9rem; /* Slightly larger paragraph font size */
+    margin-bottom: 15px;
+    color: #1C3720;
+    line-height: 1.5; /* Improve readability */
+}
+
+.text-image-section .text .learn-more {
+    color: white;
+    background-color: #ff6f00; /* Orange background */
+    padding: 8px 15px; /* Adjust padding for compact button */
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.85rem; /* Slightly larger button text */
+    margin-top: 10px;
+}
+
+.text-image-section .text .learn-more:hover {
+    background-color: #e65a00; /* Darker orange on hover */
+}
+
+/* Image Content */
+.text-image-section .image {
+    flex: 1; /* Takes half the width */
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    overflow: hidden; /* Prevent extra whitespace */
+}
+
+.text-image-section .image img {
+    width: 100%; /* Ensure the image spans the width */
+    height: 100%; /* Match height */
+    object-fit: cover; /* Maintain proportions */
+    height: 460px;
+}
+
+/* Responsive Design */
+/* For smaller screens */
+@media (max-width: 768px) {
+    /* Stack the text and image sections */
+    .text-image-section .content {
+       
+        flex-direction: column; /* Stack text and image */
+        max-width: 95%; /* Slightly more width on smaller screens */
+        margin: 0 auto; /* Center the content */
+    }
+    .content{
+        margin-top: 10%;
+    }
+
+    /* Text section */
+    .text-image-section .text {
+        width: 100%; /* Take full width */
+        padding: 20px; /* Adjust padding */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
+    /* Image section */
+    .text-image-section .image {
+        width: 100%; /* Ensure the image div takes the full width of its container */
+        height: 300px; /* Fixed height for the image */
+        padding: 20px; /* Adjust padding around the image */
+        box-sizing: border-box; /* Ensure padding is included in the height calculation */
+        display: flex;
+        justify-content: center; /* Center the image horizontally */
+        align-items: center; /* Center the image vertically */
+        overflow: hidden; /* Hide any overflow when stretching */
+    }
+    .text-image-section .image img {
+        width: 100%; /* Stretch image to fill the full width */
+        height: 400px; /* Stretch the height to match the container */
+        object-fit: fill; /* Ensure the image maintains its aspect ratio */
+        border-radius: 10px;
+    }
+}
+

@@ -1,4 +1,10 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Taste of Tradition</title>
+  <style>
     /* General Section Styles */
     section.about-us {
         display: flex;
@@ -6,22 +12,21 @@
         justify-content: center;
         align-items: stretch;
         padding: 50px 20px;
-        background: linear-gradient(to top, #FFFFE0, ,#FFFFE0,#fff);
-
+        background-color: #f9f9f9;
     }
 
     /* About Text Styling */
     .about-text {
         flex: 1 1 45%;
-        max-width: 55%;
-        margin-top: 80px;
-        background-color:rgba(255, 166, 0, 0.295); /* Softer yellow background */
-        padding: 30px;
+        max-width: 45%;
+      margin-right: -40px;
+      margin-left: 30px;
+        background-color: #fff7e6; /* Softer yellow background */
+        padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         color: #333;
         display: flex;
-        margin-left: 30px;
         flex-direction: column;
         justify-content: center;
         margin-bottom: 30px;
@@ -36,15 +41,11 @@
         gap: 20px; /* Remove gap between image row */
         align-items: center;
         justify-content: center;
-        margin-top: 60px;
+        margin-right: -50px;
         position: relative;
     }
-
-    .about-text h1{
-        font-size: 1.8rem;
-    }
     .about-text p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.6;
         margin-bottom: 20px;
         color: #444;
@@ -53,7 +54,7 @@
     /* Row for Images */
     .image-row {
         display: flex;
-        gap: 10px; /* No gap between images */
+        gap: 20px; /* No gap between images */
         justify-content: center;
         width: 100%;
         position: relative;
@@ -116,7 +117,8 @@
 
         .about-text {
             max-width: 100%;
-            
+            margin-right: 13px;
+            margin-bottom: 20px;
         }
 
         /* Image Container for Mobile */
@@ -159,3 +161,44 @@
             width: 100%;
         }
     }
+  </style>
+</head>
+<body>
+
+  <section class="about-us">
+    <div class="about-text">
+      <p>
+        We are a company dedicated to delivering exceptional service. Our team is passionate about making a difference.
+        With years of experience, we thrive on innovation and teamwork. Our commitment is to provide the highest quality to our clients.
+      </p>
+    </div>
+
+    <div class="about-images">
+      <div class="image-row">
+        <div class="image-item">
+          <img src="34.jpg" alt="Image 1">
+        </div>
+        <div class="image-item">
+          <img src="ad.jpg" alt="Image 2">
+        </div>
+      </div>
+
+      <div class="center-image">
+        <div class="image-item">
+          <img src="2d.jpg" alt="Center Image">
+        </div>
+      </div>
+
+      <div class="image-row">
+        <div class="image-item">
+          <img src="5g.jpg" alt="Image 3">
+        </div>
+        <div class="image-item">
+          <img src="ab.jpg" alt="Image 4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
