@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="newcss.css">
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="footers.css">
+    <link rel="stylesheet" href="foodpanda.css">
+    <link rel="stylesheet" href="abt.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="footer.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,11 +29,16 @@
     <nav>
         <ul class="navlist">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about-us">About</a></li>
-
-            <li><a href=".featured-items">Menu</a></li>
-            <li><a href="#reservation">Reservation</a></li>
-            <li><a href="#contact" id="contactBtn">Contact Us</a></li>
+            <li><a href=".about-us">About</a></li>
+         
+            <li>
+                <a href="#featured-items">Menu</a>
+            </li>
+            
+       
+            <li><a href="#reservation" onclick="handleReservationClick(event)">Reservation</a></li>
+         
+            <li><a href=".contact-section" id="contactBtn">Contact Us</a></li>
         </ul>
     </nav>
 </header>
@@ -40,200 +48,238 @@
         <div class="home-content">
             <h1>Savor the flavor of the tradition</h1>
             <p>Filipino dishes that bring everyone to the table</p>
-            <a href="#reservation" class="reserve-btn">Reserve Now</a>
+            <a href="#reservation" class="reserve-btn" onclick="handleReserveClick(event)">Reserve Now</a>
             <h6>Open from 10:00 AM - 9:00 PM</h6>
         </div>
     </section>
-    <section class="featured-items">
-      
-        <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1C3720" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,176C320,192,400,192,480,192C560,192,640,192,720,192C800,192,880,192,960,192C1040,192,1120,192,1200,202.7C1280,213,1360,235,1400,245.3L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> <h2 class="title">Featured <span>meals</span></h2>
-          
-        </div>
 
+   
+
+    
+        <section id="featured-items" class="featured-items">  
+
+      
+
+        <h2 class="title">Featured meals</h2>
         <div class="container">
+            
             <div class="item">
                 <h3 class="item-label">inasal-pecho</h3>
                 <img src="inasal.jpg" alt="Item 1">
-                <p class="price">$29.99</p>
+                <p class="price">Served with unli rice</p>
             </div>
+            <div class="item">
+                <h3 class="item-label">inihaw na lucos</h3>
+                <img src="luok.jpg" alt="Item 1">
+                <p class="price">medium size squid </p>
+            </div>
+            
             <div class="item">
                 <h3 class="item-label">lomi overload</h3>
                 <img src="lomi overload.jpg" alt="Item 2">
-                <p class="price">$39.99</p>
+                <p class="price">assorted overload toppings</p>
             </div>
             <div class="item">
                 <h3 class="item-label">pinakbet</h3>
                 <img src="pakbet.png" alt="Item 3">
-                <p class="price">$49.99</p>
+                <p class="price">native vegetables, and pork</p>
             </div>
         </div>
     </section>
     
-   <section id="about" class="section about">
-    <div class="about-container">
-        <div class="text-container">
-            <h2>About Us</h2>
-            <p class="sentences">Nestled in the heart of the city, <strong>Taste of Tradition</strong> is a charming restaurant that brings the rich flavors and culinary heritage of our ancestors to life. This cozy establishment prides itself on offering an authentic dining experience, where every dish tells a story.</p>
-            <p class="sentences">The menu features a diverse array of traditional foods, each prepared using time-honored recipes passed down through generations. From savory stews simmered with fragrant herbs to freshly baked bread that fills the air with its warm aroma, every bite evokes nostalgia and comfort.</p>
-            <p class="sentences">Whether you’re savoring the robust flavors of a regional specialty or indulging in a homemade dessert that’s a beloved classic, <strong>Taste of Tradition</strong> offers a unique journey through the culinary landscape of our heritage.</p>
-            
-           
-            <span class="highlight">Join us for an unforgettable dining experience!</span>
+    <section id="about-us" class="about-us">
+        <div class="about-text">
+            <h1>The Story</h1>
+          <p>
+            Azalan Kamayan Restaurant was envisioned and brought to life by Mrs. Hyacinth O. Viterbo, driven by a deep passion for Filipino cuisine and a special love for inasal na manok. This flavorful, grilled chicken dish has become the heart of the menu, celebrated as the restaurant’s signature offering and a consistent favorite among guests. At Azalan Kamayan, the vision is to create a dining experience that not only honors tradition but also fosters the joy of sharing meals with loved ones, surrounded by authentic flavors and heartfelt hospitality.  </div>
+    
+        <div class="about-images">
+          <div class="image-row">
+            <div class="image-item">
+              <img src="34.jpg" alt="Image 1">
+            </div>
+            <div class="image-item">
+              <img src="ad.jpg" alt="Image 2">
+            </div>
+          </div>
+    
+          <div class="center-image">
+            <div class="image-item">
+              <img src="2d.jpg" alt="Center Image">
+            </div>
+          </div>
+    
+          <div class="image-row">
+            <div class="image-item">
+              <img src="5g.jpg" alt="Image 3">
+            </div>
+            <div class="image-item">
+              <img src="ab.jpg" alt="Image 4">
+            </div>
+          </div>
         </div>
-   
-     <div class="images-container">
-        <div class="image image1">
-            <img src="image4.jpg" alt="Image 1" style="width:100%; height:100%;">
+      </section>
+      <!-- Food Panda Section -->
+      <section class="food-panda-section">
+        <h2>We Are on Food Panda Now!</h2>
+        <div class="qr-text">
+            <p><strong>It's All at Your Fingertips to Savor the Flavor of our delightful dishes </strong><br><br><span>Orders are accepted from 10:30 AM to 8:00 PM daily. Get your favorite food delivered directly to your door!</span></p>
         </div>
-        <div class="image image2">
-            <img src="image1.jpg" alt="Image 2" style="width:100%; height:100%;">
+        <div class="app-buttons">
+            <a href="https://apps.apple.com/us/app/apple-store/id375380948" target="_blank"tabIndex="0">
+                <img src="apple.jpg" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/games?device=windows" target="_blank" tabIndex="0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play">
+            </a>
+            <a href="https://appgallery.huawei.com/Featured" tabIndex="0">
+                <img src="huawei.png" alt="AppGallery">
+            </a>
         </div>
-        <div class="image image5">
-            <img src="image3.png" alt="Image 5" style="width:100%; height:100%;">
-        </div>
-        <div class="image image3">
-            <img src="image2.jpg" alt="Image 3" style="width:100%; height:100%;">
-        </div>
-        <div class="image image4">
-            <img src="image5.jpg" alt="Image 4" style="width:100%; height:100%;">
-        </div>
-       
-    </div>
-   
-</section>
-       
-  
-
-
     </section>
-    <section id="menu" class="section menu">Menu Section</section>
-    <section id="reservation" class="section reservation">Reservation Section</section>
-    <section id = "contact" class="contact-us-section">
-        <div class="column contact-form-column">
-            <h2>Get in Touch</h2>
-            <div class="formbox">
-                <form id="contactForm">
-                    <div class="name-container">
-                        <div class="input-container">
-                            <input type="text" id="firstName" name="firstName" required placeholder=" " />
-                            <label for="firstName">First Name</label>
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="lastName" name="lastName" required placeholder=" " />
-                            <label for="lastName">Last Name</label>
-                        </div>
-                    </div>
-                    
-                    <div class="input-container">
-                        <input type="email" id="userEmail" name="userEmail" required placeholder=" " />
-                        <label for="userEmail">Email</label>
-                    </div>
-                    <div class="input-container">
-                        <textarea id="userMessage" name="userMessage" rows="4" required placeholder=" "></textarea>
-                        <label for="userMessage">Message</label>
-                    </div>
-                    <button type="submit">Send</button>
-                    <span class="sending">Sending...</span>
-                    <div class="success-message">Your message has been sent successfully!</div>
-                </form>
+
+    <section class="text-image-section">
+        <div class="content">
+            <!-- Text Content -->
+            <div class="text">
+                <h2>What We Stand For?</h2>
+                <p>Savor the spirit of tradition with our authentic Kamayan dining experience, where carefully crafted dishes are served to bring everyone together in a shared celebration of flavor, culture, and connection. Enjoy the joy of eating with your hands, surrounded by friends and family, as we create unforgettable moments around the table.</p>
+                <a href="#about-us" class="learn-more">Learn More</a>
+                
+            </div>
+    
+            <!-- Image Content -->
+            <div class="image">
+                <img src="ddd.jpg" alt="Delicious Food">
             </div>
         </div>
         
-            <div class="column info-column">
+    </section>
+   
+    <section id="contact-section"  class="contact-section">
+        <h1 class="page-heading">We'd Love to Hear From You!</h1>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+           <br> <h2>Send Us a Message</h2>
+            <form action="#" method="POST">
+                <div class="form-group name-fields">
+                    <div class="name-field">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="name-field">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Info and Opening Hours Section -->
+        <div class="contact-info-hours">
+            <!-- Contact Info -->
+            <div class="contact-info">
                 <h2>Contact Information</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac volutpat nulla.</p>
-                <div class="contact-info">
-                    <p><strong>Address:</strong> Pueblo de Panay Township</p>
-                    <p><strong>Contact Number:</strong> 098235923759</p>
-                    <p><strong>Email:</strong> azalankamayan@gmail.com</p>
-                </div>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
+                <p><strong>Address:</strong> The Plant Farm, Sacred Heart of Jesus Blvd. Pueblo de Panay Township, Lawa-An, Philippines</p>
+                <p><strong>Phone:</strong> 0963 625 9801</p>
+                <p><strong>Email:</strong> Azalankamayan24@gmail.com</p>
+
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                     <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                </ul>
             </div>
-        </section>
 
-
-        <footer id="footer">
-            <!-- Footer Columns -->
-            <div class="footer-content">
-                <!-- Contact Us Column -->
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Pueblo de Panay Township, Roxas City, Capiz, 5800</p>
-                    <p><i class="fas fa-phone"></i> 0991-345-777</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:azalankamayan@gmail.com">azalankamayan@gmail.com</a></p>
-                </div>
-    
-                <!-- Quick Links Column -->
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Developer Column -->
-                <div class="footer-column">
-                    <h3>Developer</h3>
-                    <p>Redgie-RR Bula</p>
-                    <p>Jane Dela Torre</p>
-                    <p>Christine Leilani Delay</p>
-                    <p>Jevy Farofaldane</p>
-                </div>
-    
-                <!-- QR Code and Title Column -->
-                <div class="footer-column" style="text-align: center;">
-                    <img src="frame.png" alt="QR Code" class="qr-code">
-                    <h2>AZALAN</h2>
-                    <p class="subtitle">KAMAYAN RESTAURANT</p>
-                </div>
+            <!-- Opening Hours -->
+            <div class="hours">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday </p>
+                
+                <p>10:00 AM - 9:00 PM</p>
+                
+                <p>Sun: Closed</p>
             </div>
-    
-            <!-- Footer Bottom Section with Social Icons Positioned to the Right on Larger Screens -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; azalankamayanrestaurant2024
-                </div>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://foodpanda.com" target="_blank"><i class="fas fa-utensils"></i></a>
-                </div>
+        </div>
+        <div id="custom-alert" class="custom-modal">
+            <div class="custom-modal-content">
+                <p>Sorry, your message cannot be processed at the moment. Please try again later.</p>
+                <button id="close-alert">OK</button>
             </div>
-        </footer>
-    
+        </div>
+        
+    </section>
 
+    <footer id="footer">
+        <!-- Footer Columns -->
+        <div class="footer-content">
+            <!-- Contact Us Column -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Pueblo de Panay Township, Roxas City, Capiz, 5800</p>
+                <p><i class="fas fa-phone"></i> 0991-345-777</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:azalankamayan@gmail.com">azalankamayan@gmail.com</a></p>
+            </div>
 
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
 
+            <!-- Developer Column -->
+            <div class="footer-column">
+                <h3>Developer</h3>
+                <p>Redgie-RR Bula</p>
+                <p>Jane Dela Torre</p>
+                <p>Christine Leilani Delay</p>
+                <p>Jevy Farofaldane</p>
+            </div>
 
+            <!-- QR Code and Title Column -->
+            <div class="footer-column" style="text-align: center;">
+                <img src="frame.png" alt="QR Code" class="qr-code">
+                <h2>AZALAN</h2>
+                <p class="subtitle">KAMAYAN RESTAURANT</p>
+            </div>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <!-- Footer Bottom Section with Social Icons Positioned to the Right on Larger Screens -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; Azalan Kamayan Restaurant 2024
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://foodpanda.com" target="_blank"><i class="fas fa-utensils"></i></a>
+            </div>
+        </div>
+    </footer>
+   
     <script>
+
+    
+            function navigateToPage() {
+                window.location.href = "menuwithheader.html"; // Adjust the path as needed
+            }
+      
+        
         // Scroll effect for header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -278,47 +324,69 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-items.forEach(item => {
-    observer.observe(item); // Observe each item
+window.onload = function() {
+    // Add class to trigger the fade-in effect when the page is fully loaded
+    document.querySelector('.contact-section').classList.add('fade-in');
+};
+
+// Scroll Reveal Effect
+window.addEventListener('scroll', function() {
+let elements = document.querySelectorAll('.scroll-reveal');
+let scrollPosition = window.innerHeight + window.scrollY;
+
+elements.forEach(function(element) {
+if (element.offsetTop < scrollPosition) {
+    element.classList.add('visible');
+}
 });
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+});document.querySelector('.contact-form form').addEventListener('submit', function(event) {
+event.preventDefault(); // Prevent the form from submitting
 
-    const userInputFirstName = document.getElementById('firstName').value;
-    const userInputLastName = document.getElementById('lastName').value;
-    const userInputEmail = document.getElementById('userEmail').value;
-    const userInputMessage = document.getElementById('userMessage').value;
+// Show the custom alert modal
+document.getElementById('custom-alert').style.display = 'flex';
+});
 
-    const confirmation = confirm("Are you sure you want to send this message?");
-    if (confirmation) {
-        const sendingIndicator = document.querySelector('.sending');
-        const successMessage = document.querySelector('.success-message');
-        sendingIndicator.style.display = 'inline'; 
+// Close the modal, clear the form, and reset fields when clicking the OK button
+document.getElementById('close-alert').addEventListener('click', function() {
+document.getElementById('custom-alert').style.display = 'none'; // Hide the alert modal
 
-        setTimeout(() => {
-            submitContactForm(userInputFirstName, userInputLastName, userInputEmail, userInputMessage);
-            sendingIndicator.style.display = 'none'; 
-            successMessage.style.display = 'block'; 
-        }, 2000);
+// Clear the contact form fields
+document.querySelector('.contact-form form').reset();
+});
+// Add event listener to the submit button
+document.querySelector('.reserve-button').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    alert('Sorry, your message cannot be reviewed at the moment. Please try again later.');
+});
+
+function handleReserveClick(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Check if the target element exists
+    const target = document.querySelector('#reservation');
+
+    if (target) {
+        // Scroll to the reservation section if it exists
+        target.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.log("Message sending canceled.");
+        // Handle the error if the target section is not found
+        alert('Sorry, the reservation page is currently unavailable.');
     }
-});
+}
 
-function submitContactForm(firstName, lastName, userEmail, userMessage) {
-    if (!firstName || !lastName || !userEmail || !userMessage) {
-        console.error("All fields are required.");
-        return;
+function handleReservationClick(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    // Check if the target element exists
+    const target = document.querySelector('#reservation');
+
+    if (target) {
+        // Scroll to the reservation section if it exists
+        target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // Handle the error if the target section is not found
+        alert('Sorry, the reservation page is currently unavailable.');
     }
-
-    const contactFormData = {
-        firstName: firstName,
-        lastName: lastName,
-        email: userEmail,
-        message: userMessage
-    };
-
-    console.log("Sending the following data to the server:", contactFormData);
 }
 </script>
 
