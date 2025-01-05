@@ -3,392 +3,1246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azalan Kamayan Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="foodpanda.css">
-    <link rel="stylesheet" href="abt.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="footer.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Basic Meta Tags -->
+    <meta name="description" content="Azalan Kamayan Restaurant - Traditional Filipino Dining">
+    <meta name="keywords" content="Azalan Kamayan Restaurant, restaurant in Pueblo de Panay, best restaurant in Pueblo de Panay, Filipino cuisine in Pueblo de Panay, traditional Filipino dining, restaurants in roxas city, Azalan restaurant Roxas City, Filipino buffet, authentic Filipino food, restaurant in Pueblo de Panay, best Filipino restaurant, Kamayan style dining, family restaurant Pueblo de Panay, best seafood in Pueblo de Panay, Filipino food near me, Azalan Kamayan buffet">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Tags for Facebook -->
+    <meta property="og:title" content="Azalan Kamayan Restaurant - Traditional Filipino Dining">
+    <meta property="og:description" content="Experience authentic Filipino cuisine in a traditional Kamayan style at Azalan Kamayan, located in Pueblo de Panay.">
+    <meta property="og:image" content="https://azalankamayan.site/path/to/your/image.jpg"> <!-- Make sure to provide a valid image URL -->
+    <meta property="og:url" content="https://azalankamayan.site/">
+    <meta property="og:type" content="website">
+    
+    <!-- Optional but recommended Open Graph Tags -->
+    <meta property="og:site_name" content="Azalan Kamayan Restaurant">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags (optional but helpful for Twitter sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Azalan Kamayan Restaurant - Traditional Filipino Dining">
+    <meta name="twitter:description" content="Experience authentic Filipino cuisine in a traditional Kamayan style at Azalan Kamayan, located in Pueblo de Panay.">
+    <meta name="twitter:image" content="https://azalankamayan.site/path/to/your/image.jpg"> <!-- Make sure to provide a valid image URL -->
+    
+    <title>Azalan Kamayan Restaurant</title>
+  
+   
+    <link rel="stylesheet" href="featured-dishes.css">
+    <link rel="stylesheet" href="aboutto.css">
+    <link rel="stylesheet" href="galleryto.css">
+    <link rel="stylesheet" href="testimony.css">
+    <link rel="stylesheet" href="contactsto.css">
+    <link rel="stylesheet" href="foot.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Holtwood+One+SC&family=Josefin+Sans:wght@100..700&family=Lato:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Boxicons for icons -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/fav-icon.png"/>
+    <!--poppins-font-family------------------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--using-Font-Awesome-------------------->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: poppins;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+          
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            margin-top: 30px; /* Initial top margin for blending */
+            padding: 20px 30px;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            transition: background-color 0.3s ease, margin-top 0.3s ease;
+        }
+
+ 
+
+
+        .navbar.scrolled {
+            background-color: #015c19;
+            margin-top: 0; /* Remove margin when scrolling */
+            box-shadow: 0 4px 5px rgba(0, 40, 20, 0.6); /* Darker shadow with lower opacity */
+        }
+        
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+        .logo-container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            transition: all 0.3s ease; /* Smooth transition for flex-direction and margins */
+
+        }
+
+        .logo {
+            width: 53px;
+            height: 55px;
+            margin-right: 10px;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            
+            color: rgb(224, 147, 2);
+            font-size: 1.4rem;
+        }
+
+        .logo-text p {
+            margin: -5px 0 0 0;
+            font-size: 8.5px;
+            color: white;
+        }
+
+/* When scrolled, reposition the logo text back to the right side of the logo */
+.navbar.scrolled .logo-container {
+    flex-direction: row; /* Keep logo and text in a row */
+margin-left: 2px;
+transition: margin-left 0.3s ease; /* Smooth transition for margin-left */
+   
+    justify-content:left; /* Center horizontally */
+   
+}
+
+
+.navbar.scrolled .logo-text {
+    margin-top: 0;
+    
+    transition: margin-left 0.5s ease; /* Smooth transition for margin-left */
+    margin-left: -5px; /* Ensure logo text moves back to the right after scrolling */
+}
+.navbar.scrolled .logo-text h1 {
+   
+    font-size: 1.5rem;margin-top: -3px;
+    
+}
+.navbar.scrolled .logo-text p {
+    font-size: 8.8px;
+    transition: margin-left 0.3s ease; /* Smooth transition for margin-left */
+    
+}
+.navbar.scrolled .logo {
+   width: 60px;
+   height: 60px;
+}
+ 
+        /* Center the nav menu */
+        .nav-links {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links ul li {
+            margin: 4px 15px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
+    transition: color 0.3s;
+    font-size: 1rem;
+    
+        }
+
+        .nav-links ul li a::after {
+            content: '';
+            display: block;
+            height: 2px; /* Height of the underline */
+            background: rgba(248, 202, 123, 0.967); /* Color of the underline */
+            width: 0; /* Start with zero width */
+            position: absolute; /* Position it below the link */
+            left: 0;
+           
+                 transition: width 0.3s ease-in-out; /* Smooth transition */
+        }
+        .nav-links ul li a:hover {
+            color: #d2e0c0; /* Change text color on hover */
+        }
+
+        .nav-links ul li a:hover::after {
+            width: 95%; /* Expand line to full text length on hover */
+           
+        }
+         /* Container for the search bar */
+.search-bar-container {
+    position: relative;
+    display: inline-block;
+    width: 250px; /* Default width of the container */
+}
+
+/* Default state for search bar (hidden) */
+.search-bar {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 0; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: width 0.3s ease, opacity 0.3s ease;
+    padding-right: 30px; /* Space for the search icon */
+}
+
+/* Focus style for the search bar */
+.search-bar:focus {
+    border-color: #015c19;
+}
+
+/* Style for the search button */
+.search-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ac732a;
+    position: absolute;
+    right: 5px; /* Right-align the search icon */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* When the search bar is expanded */
+.search-bar.expanded {
+    width: 200px; /* Width when expanded */
+    opacity: 1; /* Make it visible */
+    padding: 5px 10px; /* Adjust padding */
+}
+
+/* Style for the View Menu Button */
+.view-menu-btn {
+    background-color: orange; /* Orange background */
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    transition: none; /* Disable hover transition effects */
+    display: inline-block;
+    text-align: center; /* Center text inside the button */
+}
+
+/* No hover effect, just a plain button */
+.view-menu-btn:hover {
+    background-color: rgb(223, 145, 0); /* Keep the same color when hovered */
+    color: white; /* Keep the same text color */
+}
+
+ /* Hamburger and X Icons */
+ #menu-icon {
+    font-size: 1.5rem;
+  
+            padding-left: 20px; /* Adjust padding if needed */
+            cursor: pointer;
+            color: rgb(194, 194, 194);
+            position: fixed; /* Make it stay visible */
+            /* Set its position relative to the top */
+            right: 30px; /* Align it to the right edge */
+            z-index: 15; /* Ensure it stays above other elements */
+            transition: margin-left 0.3s;
+}
+#menu-icon:hover {
+    transform: scale(1.2); /* Slightly increase size on hover */
+    transition: transform 0.3s ease;
+}
+ /* Home Section */
+ #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height:100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    
+    background-image: url('azalan bg.png');
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Smooth transition for background */
+    padding-top: 40px;
+}
+ /* Semi-transparent overlay for better text visibility */
+ #home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171a16bc; /* Dark overlay for contrast */
+    z-index: 1;
+}
+#home .background-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
+.home-content {
+    z-index: 2;
+    padding: 10px;
+    .home-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* or row, depending on your layout */
+      }
+      
+   
+}
+.home-content p {
+            
+    font-weight:300;
+    margin-top: -20px;
+   margin-bottom: -150px;
+    align-items: center;
+     font-size: clamp(0.3rem, 2vw, 0.6rem);
+ }
+ .home-content h4{
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    line-height: 1.5; /* Adjust line-height for better readability */
+
+   width: 60%;
+     margin-bottom: 30px;
+    align-items: center;
+     font-size: clamp(1rem, 1vw, 1.5rem);
+ }
+
+ /* Home Section h4 */
+.home-content h4 {
+   
+    font-weight:lighter;
+   
+    align-items: center;
+    text-align: center;
+  
+   
+  
+   
+}
+
+.home-content h1 {
+
+    margin-bottom: 30px;  /* Space added below h1 */
+    font-weight:600;
+    color: #fff;
+   font-family: Arial, Helvetica, sans-serif;
+  
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+ .reserve-btn {
+    display: inline-block;
+    
+    padding: 10px 20px;
+    background-color: #0c922b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: -10px;
+    font-weight:6500;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: rgb(1, 130, 24);
+    transform: scale(1.1);
+}
+
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 1180px) {
+            /* For very small screens, the search bar container is still visible but compact */
+            .search-bar-container {
+              
+                width: 90%; /* Smaller container width */
+            }
+          
+            
+            .search-bar {
+             
+              width: 87%; /* On small screens, take up 80% of the available width */
+                opacity: 2; /* Keep the input box invisible */
+            }
+        
+            /* Expanded state for the search bar on small screens */
+            .search-bar.expanded {
+                width: 93%; /* On small screens, take up 80% of the available width */
+            }
+            .view-menu-btn{
+                margin-top: 20px;
+            }
+            .logo-container {
+                display: flex;
+                margin-left: -60px;
+                flex-direction: column; /* Stack logo and text vertically */
+                justify-content: center;
+                align-items: center; /* Center both vertically and horizontally */
+                width: 100%;
+            }
+        
+            .logo {
+                width: 70px; /* Adjust logo size for small screens */
+                height: 70px;
+            }
+        
+            .logo-text {
+                font-size:larger;
+                text-align: center; /* Center-align the text */
+                margin-top: 5px; /* Add space between logo and text */
+            }
+            .logo-text h1 {
+              color: rgb(221, 144, 0);
+                font-size: 1.8em;
+            }
+            .logo-text p {
+                color: #dfdfdf;
+                font-size: 0.7em}
+
+            
+            
+        }
+         /* Mobile Responsive */
+         @media screen and (max-width: 1180px) {
+            #home {
+                max-height:90vh;
+                object-fit: contain;
+           }  
+             .home-content h4{
+                width: 100%;
+             } 
+            .nav-links ul {
+                padding: 10% 20px;
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+              
+                left: 0;
+                border-radius: 0 10px 10px 0;
+                text-align: left;
+                background:rgb(242, 244, 241);
+                width: 65%;
+                height: 100vh;
+                gap: 10px;
+                transform: translateX(-100%); /* Initially hidden */
+                transition: transform 0.5s ease-in-out; /* Smooth slide-in and slide-out */
+            }  #menu-icon {
+                margin: 10px; /* Increase this value to lower the icon */
+                
+            }
+            
+            .nav-links ul li a:hover{
+                color: #faa11c;
+            }
+
+        .nav-links ul li a:hover::after {
+            width: 0; /* Expand line to full text length on hover */
+            color: #a56363;
+        }
+            .nav-links.active ul {
+                transform: translateX(0); /* Slide in when active */
+            }
+
+    /* Add a horizontal line below the nav links in smaller screens */
+    /* Style for each nav link item in smaller screens */
+    .nav-links ul li {
+     
+        margin: 0 0 5px 0; /* Remove margin */
+        width: 100%; /* Ensure the list item takes up full width of the nav */
+        border-bottom: 1px solid #a3a3a3; /* Adds a border under each link */
+    }    
+            .nav-links ul li a {
+                color: #333; /* Dark gray color for better contrast on white */
+                font-size: 16px;
+                text-decoration: none; /* Remove underline */
+                transition: color 0.3s ease; /* Smooth transition on hover */
+            }
+            /* Subtle horizontal divider between nav links */
+    .nav-links ul li:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light gray line */
+    }
+        }
+/* For larger screens, navbar remains at the top */
+
+        /* For larger screens, the menu should remain horizontal */
+        @media screen and (min-width: 1180px) {
+            .nav-links ul {
+                display: flex;
+                opacity: 1;
+                transform: none;
+            }
+
+            #menu-icon {
+                display: none;
+            }
+            
+        }
+
+  @media screen and (max-width: 788px) {
+    #home {
+        max-height:80vh;
+        object-fit: contain;
+   } 
+    .logo-container {
+        
+        display: flex;
+        
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%; /* Ensure it takes full width *//* Increase this value to lower the logo */   }
+    .logo {
+        width:60px;  /* Smaller logo size for small screens */
+        height: 60px;}
+        .logo-text {
+            font-size:larger;
+            text-align: center; /* Center-align the text */
+            margin-top: 5px; /* Add space between logo and text */
+        }
+        .logo-text h1 {
+          
+            font-size: 1.5em;
+        }
+        .logo-text p {
+            font-size: 0.6em}
+
+    }
+
+    /* Scroll Up Button Styles */
+#scrollUpBtn {
+    position: fixed;
+    bottom: 20px; /* Position the button 20px from the bottom */
+    right: 20px;  /* Position the button 20px from the right */
+    background-color: #015c19; /* Dark green background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px; /* Adjust the size of the icon */
+    border-radius: 50%; /* Make it round */
+    cursor: pointer;
+    
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+  }
+  /* Hover effect for the button */
+  #scrollUpBtn:hover {
+    background-color: #006400; /* Slightly lighter green on hover */
+  }
+  
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-        <a href="#home" class="logo-name">AZALAN</a>
-        <a href="#home" class="subtitle">Kamayan Restaurant</a>
-    </div>
-    <div class="menu-icon bx bx-menu" id="menu-icon"></div>
-    <nav>
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href=".about-us">About</a></li>
-         
-            <li>
-                <a href="#featured-items">Menu</a>
-            </li>
-            
-       
-            <li><a href="#reservation" onclick="handleReservationClick(event)">Reservation</a></li>
-         
-            <li><a href=".contact-section" id="contactBtn">Contact Us</a></li>
-        </ul>
+ <nav class="navbar" id="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">
+                <h1>AZALAN</h1>
+                <p>Kamayan restaurant</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#our-story">About</a></li>
+              <li><a href="menuwithheader.html" target="_blank">Menu</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#ReserveNow">Reservation</a></li>
+               
+                <!-- Search bar inside navbar -->
+                <li class="search-bar-container">
+                    <button class="search-btn" onclick="toggleSearch()">
+                        <i class="bx bx-search"></i>
+                    </button>
+                    <input type="text" placeholder="Search..." class="search-bar">
+                </li>
+                
+<!-- View Menu Button -->
+<button class="view-menu-btn" onclick="window.location.href='#menu'">Contact Us</button>
+                
+            </ul>
+        </div>
+
+        <div class="menu-icon bx bx-menu" id="menu-icon"></div>
     </nav>
-</header>
 
-
-    <section id="home" class="section home">
+    <section id="home">
         <div class="home-content">
-            <h1>Savor the flavor of the tradition</h1>
-            <p>Filipino dishes that bring everyone to the table</p>
-            <a href="#reservation" class="reserve-btn" onclick="handleReserveClick(event)">Reserve Now</a>
-            <h6>Open from 10:00 AM - 9:00 PM</h6>
+            <h1>Savor the flavor of the tradition </h1>
+            <h4>Indulge in the rich flavors of Filipino cuisine, expertly grilled to perfection. From succulent meats to savory seafood, every bite is a testament to our culinary heritage. Join us and experience the heart of Roxas City’s dining scene.</h4>
+            
+            <a href="#reservation" class="reserve-btn">Reserve Now</a><br><br>
+            <h6>OPERATING HOURS</h6>
+                <p>Sunday-Thursday: 10 am-9:00pm<br>
+                Sunday-Thursday: 10 am-9:00pmz<p>
+            
         </div>
-    </section>
-
-   
-
-    
-        <section id="featured-items" class="featured-items">  
-
+        
+    </section> <section class="featured-dishes">
+      <h1>Our Featured Dishes</h1>
+      <p>Savor the rich flavors of Filipino cuisine, share delicious dishes with friends and family, and make lasting memories around the table. Join us at Azalan Kamayan Restaurant for an unforgettable dining experience.</p>
+      <div class="dishes-container">
+          <div class="dish">
+              <img src="inasal.jpg" alt="Chicken Inasal">
+              <div class="dish-content">
+                  <h3>Chicken Inasal</h3>
+                  <p>Served with unli rice</p>
+                  <a href="menuwithheader.html" class="menu-button">See menu</a>
+              </div>
+          </div>
+          <div class="dish">
+              <img src="pakbet.png" alt="Pinakbet">
+              <div class="dish-content">
+                  <h3>Pinakbet</h3>
+                  <p>Native vegetables, and pork</p>
+                  <a href="menuwithheader.html" class="menu-button">See menu</a>
+              </div>
+          </div>
+          <div class="dish">
+              <img src="lomi overload.jpg" alt="Lomi">
+              <div class="dish-content">
+                  <h3>Lomi Overload</h3>
+                  <p>Assorted overload toppings</p>
+                  <a href="menuwithheader.htmlW" class="menu-button">See menu</a>
+              </div>
+          </div>
+      </div>
+     
+  </section>
+    <section id="our-story">
+      <div class="grid-container">
       
-
-        <h2 class="title">Featured meals</h2>
-        <div class="container">
-            
-            <div class="item">
-                <h3 class="item-label">inasal-pecho</h3>
-                <img src="inasal.jpg" alt="Item 1">
-                <p class="price">Served with unli rice</p>
-            </div>
-            <div class="item">
-                <h3 class="item-label">inihaw na lucos</h3>
-                <img src="luok.jpg" alt="Item 1">
-                <p class="price">medium size squid </p>
-            </div>
-            
-            <div class="item">
-                <h3 class="item-label">lomi overload</h3>
-                <img src="lomi overload.jpg" alt="Item 2">
-                <p class="price">assorted overload toppings</p>
-            </div>
-            <div class="item">
-                <h3 class="item-label">pinakbet</h3>
-                <img src="pakbet.png" alt="Item 3">
-                <p class="price">native vegetables, and pork</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about-us" class="about-us">
-        <div class="about-text">
-            <h1>The Story</h1>
+        <div>
+          <h2>Our Story and Vision</h2>
+          <h3>Gather, Savor, & Celebrate. Inspired by Heritage, Crafted for You.</h3>
           <p>
-            Azalan Kamayan Restaurant was envisioned and brought to life by Mrs. Hyacinth O. Viterbo, driven by a deep passion for Filipino cuisine and a special love for inasal na manok. This flavorful, grilled chicken dish has become the heart of the menu, celebrated as the restaurant’s signature offering and a consistent favorite among guests. At Azalan Kamayan, the vision is to create a dining experience that not only honors tradition but also fosters the joy of sharing meals with loved ones, surrounded by authentic flavors and heartfelt hospitality.  </div>
-    
-        <div class="about-images">
-          <div class="image-row">
-            <div class="image-item">
-              <img src="34.jpg" alt="Image 1">
-            </div>
-            <div class="image-item">
-              <img src="ad.jpg" alt="Image 2">
-            </div>
-          </div>
-    
-          <div class="center-image">
-            <div class="image-item">
-              <img src="2d.jpg" alt="Center Image">
-            </div>
-          </div>
-    
-          <div class="image-row">
-            <div class="image-item">
-              <img src="5g.jpg" alt="Image 3">
-            </div>
-            <div class="image-item">
-              <img src="Ab.jpg" alt="Image 4">
-            </div>
-          </div>
+            At Azalan Kamayan Restaurant, the vision is to create a dining experience that not only honors tradition but
+            also fosters the joy of sharing meals with loved ones, surrounded by authentic flavors and heartfelt hospitality.
+          </p>
+          <p>
+            Azalan Kamayan Restaurant was established in 2019 namely as Cafe Pueblo Restaurant, located in Pueblo de Panay Township, Roxas City, Capiz. It was envisioned and brought to life by Mrs. Hyacinth O. Viterbo, driven by a deep passion for Filipino cuisine and special love for inasal na manok. This flavorful grilled chicken dish has become the heart of the menu, celebrated as the restaurant's signature offering and consistent favorite among guests.
+          </p>
         </div>
-      </section>
-      <!-- Food Panda Section -->
-      <section class="food-panda-section">
-        <h2>We Are on Food Panda Now!</h2>
-        <div class="qr-text">
-            <p><strong>It's All at Your Fingertips to Savor the Flavor of our delightful dishes </strong><br><span>Orders are accepted from 10:30 AM to 8:00 PM daily. Get your favorite food delivered directly to your door!</span></p>
+       
+        <div>
+          <img src="34.jpg" alt="Delicious Filipino dishes">
         </div>
-        <div class="app-buttons">
-            <a href="https://apps.apple.com/us/app/apple-store/id375380948" target="_blank"tabIndex="0">
-                <img src="apple.jpg" alt="App Store">
-            </a>
-            <a href="https://play.google.com/store/games?device=windows" target="_blank" tabIndex="0">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play">
-            </a>
-            <a href="https://appgallery.huawei.com/Featured" tabIndex="0">
-                <img src="huawei.png" alt="AppGallery">
-            </a>
+      </div>
+  
+      <div class="grid-container" style="margin-top: 40px;">
+     
+        <div class="video-container">
+          <iframe 
+src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Fcafepueblo2019%2Fvideos%2F266932954288061%2F&show_text=false&width=560&t=0" 
+width="400" 
+height="225" 
+style="border:none;overflow:hidden" 
+scrolling="no" 
+frameborder="0" 
+allowfullscreen="true" 
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+allowFullScreen="true" 
+loading="lazy">
+</iframe>
+</div>
+     
+        <div class="watch-section">
+          <div class="icon"></div>
+          <h3 class="watch-title">Watch and Enjoy!</h3>
+          <p>Savor the rich flavors of Filipino cuisine, share delicious dishes with friends and family.</p>
         </div>
+      </div>
     </section>
+  
+    
+      <div class="container">
+        <h1>Our Gallery</h1>
+        <p class="subtitle">Explore our beautiful restaurant and the wonderful moments shared with our guests.</p>
 
-    <section class="text-image-section">
-        <div class="content">
-            <!-- Text Content -->
-            <div class="text">
-                <h2>What We Stand For?</h2>
-                <p>Savor the spirit of tradition with our authentic Kamayan dining experience, where carefully crafted dishes are served to bring everyone together in a shared celebration of flavor, culture, and connection. Enjoy the joy of eating with your hands, surrounded by friends and family, as we create unforgettable moments around the table.</p>
-                <a href="#about-us" class="learn-more">Learn More</a>
+        <!-- Image Gallery -->
+        <div class="gallery" id="gallery">
+            <!-- Gallery items (only first 6 will be shown initially) -->
+            <div class="gallery-item"><img src="2d.jpg" alt="Image 1">
                 
             </div>
-    
-            <!-- Image Content -->
-            <div class="image">
-                <img src="ddd.jpg" alt="Delicious Food">
+            <div class="gallery-item"><img src="34.jpg" alt="Image 2">
+              
             </div>
-        </div>
-        
-    </section>
-   
-    <section id="contact-section"  class="contact-section">
-        <h1 class="page-heading">We'd Love to Hear From You!</h1>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-           <br> <h2>Send Us a Message</h2>
-            <form action="#" method="POST">
-                <div class="form-group name-fields">
-                    <div class="name-field">
-                        <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="firstname" required>
-                    </div>
-                    <div class="name-field">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname" name="lastname" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-
-        <!-- Contact Info and Opening Hours Section -->
-        <div class="contact-info-hours">
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p><strong>Address:</strong> The Plant Farm, Sacred Heart of Jesus Blvd. Pueblo de Panay Township, Lawa-An, Philippines</p>
-                <p><strong>Phone:</strong> 0963 625 9801</p>
-                <p><strong>Email:</strong> Azalankamayan24@gmail.com</p>
-
-                <h3>Follow Us</h3>
-                <ul class="social-links">
-                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                     <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                </ul>
+            <div class="gallery-item"><img src="5g.jpg" alt="Image 3">
+             
             </div>
-
-            <!-- Opening Hours -->
-            <div class="hours">
-                <h3>Opening Hours</h3>
-                <p>Monday - Friday </p>
+            <div class="gallery-item"><img src="a2.jpg" alt="Image 4">
+               
+            </div>
+            <div class="gallery-item"><img src="a5.jpg" alt="Image 5">
+               
+            </div>
+            <div class="gallery-item"><img src="ab.jpg" alt="Image 6">
+               
+            </div>
+            <!-- Extra gallery items (hidden initially) -->
+            <div class="gallery-item"><img src="ac.jpg" alt="Image 7">
+               
+            </div>
+            <div class="gallery-item"><img src="ad.jpg" alt="Image 8">
                 
-                <p>10:00 AM - 9:00 PM</p>
+            </div>
+            <div class="gallery-item"><img src="sfdfdf.jpg" alt="Image 9">
+               
+            </div>
+            <div class="gallery-item"><img src="25.jpg" alt="Image 10">
+               
+            </div>
+            <div class="gallery-item"><img src="26.jpg" alt="Image 11">
                 
-                <p>Sun: Closed</p>
             </div>
-        </div>
-        <div id="custom-alert" class="custom-modal">
-            <div class="custom-modal-content">
-                <p>Sorry, your message cannot be processed at the moment. Please try again later.</p>
-                <button id="close-alert">OK</button>
-            </div>
-        </div>
-        
-    </section>
-
-    <footer id="footer">
-        <!-- Footer Columns -->
-        <div class="footer-content">
-            <!-- Contact Us Column -->
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Pueblo de Panay Township, Roxas City, Capiz, 5800</p>
-                <p><i class="fas fa-phone"></i> 0991-345-777</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:azalankamayan@gmail.com">azalankamayan@gmail.com</a></p>
-            </div>
-
-            <!-- Quick Links Column -->
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Developer Column -->
-            <div class="footer-column">
-                <h3>Developer</h3>
-                <p>Redgie-RR Bula</p>
-                <p>Jane Dela Torre</p>
-                <p>Christine Leilani Delay</p>
-                <p>Jevy Farofaldane</p>
-            </div>
-
-            <!-- QR Code and Title Column -->
-            <div class="footer-column" style="text-align: center;">
-                <img src="frame.png" alt="QR Code" class="qr-code">
-                <h2>AZALAN</h2>
-                <p class="subtitle">KAMAYAN RESTAURANT</p>
+            <div class="gallery-item"><img src="27.jpg" alt="Image 12">
+                
             </div>
         </div>
 
-        <!-- Footer Bottom Section with Social Icons Positioned to the Right on Larger Screens -->
-        <div class="footer-bottom">
-            <div class="copyright">
-                &copy; Azalan Kamayan Restaurant 2024
-            </div>
-            <div class="social-icons">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://foodpanda.com" target="_blank"><i class="fas fa-utensils"></i></a>
-            </div>
-        </div>
-    </footer>
-   
-    <script>
+        <!-- Button to show more images, only appears after the first 6 -->
+        <button class="show-more-btn" id="showMoreBtn">SEE MORE</button>
 
-    
-            function navigateToPage() {
-                window.location.href = "menuwithheader.html"; // Adjust the path as needed
-            }
+        <!-- Modal for image zoom -->
+        <div id="modal" class="modal">
+            <button class="modal-close" id="closeModal">&times;</button>
+           <!-- Updated modal navigation buttons -->
+<button class="modal-nav-btn modal-prev" id="prevBtn">&#10094;</button> <!-- Left arrow -->
+<button class="modal-nav-btn modal-next" id="nextBtn">&#10095;</button> <!-- Right arrow -->
+ <img id="modalImage" src="" alt="Zoomed Image">
+        </div>
+    </div>
+    <!--Testimonials------------------->
+    <section id="testimonials">
+      <!--heading--->
+      <div class="testimonial-heading">
+          <h1>What Do Our Customers Say?
+          </h1>
+          
+      </div>
+      <!--testimonials-box-container------>
+      <div class="testimonial-box-container">
+          <!--BOX-1-------------->
+          <div class="testimonial-box">
+              <!--top------------------------->
+              <div class="box-top">
+                  <!--profile----->
+                  <div class="profile">
+                      <!--img---->
+                      <div class="profile-img">
+                          <img src="images/c-1.jpg" />
+                      </div>
+                      <!--name-and-username-->
+                      <div class="name-user">
+                          <strong>Touseeq Ijaz</strong>
+                         
+                      </div>
+                  </div>
+                  <!--reviews------>
+                  <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i><!--Empty star-->
+                  </div>
+              </div>
+              <!--Comments---------------------------------------->
+              <div class="client-comment">
+                  <p>I’ve never experienced anything like the Kamayan style of dining, and Azalan did it perfectly! The variety of dishes was amazing, and the flavors took me straight back to the Philippines. Definitely a must-try if you’re in the area.</p>
+              </div>
+          </div>
+          <!--BOX-2-------------->
+          <div class="testimonial-box">
+              <!--top------------------------->
+              <div class="box-top">
+                  <!--profile----->
+                  <div class="profile">
+                      <!--img---->
+                      <div class="profile-img">
+                          <img src="images/c-2.jpg" />
+                      </div>
+                      <!--name-and-username-->
+                      <div class="name-user">
+                          <strong>J.K Rowling</strong>
+                          
+                      </div>
+                  </div>
+                  <!--reviews------>
+                  <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i><!--Empty star-->
+                  </div>
+              </div>
+              <!--Comments---------------------------------------->
+              <div class="client-comment">
+                  <p>The atmosphere at Azalan Kamayan is unlike any other. The blend of Filipino culture and modern dining creates such a fun and relaxing vibe. The food was outstanding, with everything from the grilled meats to the fresh seafood cooked to perfection. I’ll be back for sure!</p>
+              </div>
+          </div>
+          <!--BOX-3-------------->
+          <div class="testimonial-box">
+              <!--top------------------------->
+              <div class="box-top">
+                  <!--profile----->
+                  <div class="profile">
+                      <!--img---->
+                      <div class="profile-img">
+                          <img src="images/c-3.jpg" />
+                      </div>
+                      <!--name-and-username-->
+                      <div class="name-user">
+                          <strong>Harry Potter</strong>
+                         
+                      </div>
+                  </div>
+                  <!--reviews------>
+                  <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i><!--Empty star-->
+                  </div>
+              </div>
+              <!--Comments---------------------------------------->
+              <div class="client-comment">
+                  <p>What a fantastic dining experience! The food was not only delicious but also beautifully presented. It was a great way to experience Filipino cuisine with friends, and the portions were generous. The warm hospitality made it an even more memorable evening.</p>
+              </div>
+          </div>
+          
+          <!--BOX-4-------------->
+          <div class="testimonial-box">
+              <!--top------------------------->
+              <div class="box-top">
+                  <!--profile----->
+                  <div class="profile">
+                      <!--img---->
+                      <div class="profile-img">
+                          <img src="images/c-4.jpg" />
+                      </div>
+                      <!--name-and-username-->
+                      <div class="name-user">
+                          <strong>Oliva</strong>
+                          
+                      </div>
+                  </div>
+                  <!--reviews------>
+                  <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i><!--Empty star-->
+                  </div>
+              </div>
+              <!--Comments---------------------------------------->
+              <div class="client-comment">
+                  <p>I was blown away by the quality of the food and the overall experience at Azalan Kamayan. The mix of textures and flavors was perfect. A great spot for a family gathering or a fun dinner with friends!</p>
+              </div>
+          </div>
+  
+      </div>
       
-        
-        // Scroll effect for header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    
+</section>
 
-        // Smooth scrolling for navigation links
-        const links = document.querySelectorAll('nav ul li a');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+<section id ="Contacts">
+  <div class = "uppername">
+  <h1>Contact Us</h1>
+  <div class="banner">
+      <h2>Let’s Make Something Great Together</h2>
+  </div>
+</div> 
 
-        // Toggle mobile menu
-        let menu = document.querySelector('#menu-icon');
-        let navlist = document.querySelector('.navlist');
+<main>
+  <section class="contact-container">
+      <div class="form-container">
+          <h3>Send us a message!</h3>
+          <form name="contact" method="POST" data-netlify="true">
+              <!-- Hidden fields -->
+              <input type="hidden" name="form-name" value="contact">
+              <input type="hidden" name="_next" value="https://azalankamayan.site/thankyou.html">
 
-        menu.onclick = () => {
-            menu.classList.toggle('bx-x'); // Change icon to 'X'
-            navlist.classList.toggle('open'); // Toggle navigation visibility
-        };
+          
+              <div class="input-group">
+                  <div class="input-item">
+                      <label for="firstname">Firstname</label>
+                      <input type="text" id="firstname" name="firstname" placeholder="Firstname" required>
+                  </div>
+                  <div class="input-item">
+                      <label for="lastname">Lastname</label>
+                      <input type="text" id="lastname" name="lastname" placeholder="Lastname" required>
+                  </div></div>
+             
+          
+                  <div class="input-item">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="email@gmail.com" required>
+                  </div>
+              
+                  <!-- Message with label -->
+                  <div class="input-item">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" placeholder="Message" required></textarea>
+                  </div>
+              <button type="submit" class="send-button">Send Message</button>
+          </form>
+          
+          
+          
+      </div>
+      <div class="info-container">
+          <h3>Dine with us and savor the flavor of tradition</h3>
+          <div class="top">
+              <p><strong>Contact Information</strong></p>
+              <p>We’d love to hear from you! You can reach us through the following methods:</p>
+          </div>
+          <div class="middle">
+              <p><strong>Address:</strong> Pueblo de Panay Township</p>
+              <p><strong>Contact Number:</strong> 098253925759</p>
+              <p><strong>Email:</strong> azalankamayan@gmail.com</p>
+          </div>
+          <div class="bottom">
+              <p><strong>Opening Hours:</strong></p>
+              <p>Mon-Sun: 10 am–10:00 pm</p>
+             
+          </div>
+          <p><br>Feel free to get in touch with us for any inquiries, feedback, or support.</p>
+      </div>
 
-        const items = document.querySelectorAll('.item');
-const observerOptions = {
-    root: null, // Use the viewport as the root
-    threshold: 0.1 // Trigger when 10% of the item is visible
+  </section>
+</main>
+</section>
+    
+</section>
+
+<footer>
+    <div class="footer-container">
+      <!-- Column 1: Locations -->
+      <div class="footer-column">
+        <h4>Locations</h4>
+        <ul>
+          <li>Pueblo de Panay Township,<br> Roxas City, Capiz, 5800</li>
+          <h4>Email</h4>
+          <li><a href="mailto:info@example.com">info@example.com</a></li>
+          
+        </ul>
+      </div>
+
+   
+      <!-- Column 3: Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="menuwithheader.html" target="_blank">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#ReserveNow">Reservation</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: For Developers -->
+      <div class="footer-column">
+        <h4>Web Developers</h4>
+        <ul>
+          <li><a href="#">Redgie-RR Bula</a></li>
+          <li><a href="#">Jane Dela Torre</a></li>
+          <li><a href="#">Christine Leilani Delay</a></li>
+          <li><a href="#">Jevy Farofaldane</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Open Hours -->
+      <div class="footer-column">
+        <h4>Open Hours</h4>
+        <ul>
+         
+          <li>Monday-Sunday</li>
+          <li>10:00 AM - 10:00 PM</li>
+         
+        </ul>
+      </div>
+
+      <!-- Column 6: Business Logo and Name with Subtitle -->
+      <div class="footer-column">
+        <div class="logos">
+          
+          <img src="logo.png" alt="Logo"> <!-- Replace with your logo URL -->
+          <h2>AZALAN</h2>
+          <p>Kamayan Restaurant</p>
+        </div>
+      </div>
+    </div>
+
+   
+  
+
+    <!-- Copyright Notice -->
+  
+
+  <div class="footer-bottom">
+    <div class="copyright">
+        © Copyright 2024, All Rights Reserved by Azalan Kamayan Restaurant
+    </div>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://foodpanda.com" target="_blank"><i class="fas fa-utensils"></i></a>
+   
+</div>
+</footer>
+    <!-- Scroll Up Button -->
+    <button id="scrollUpBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script>   // Toggle mobile menu
+  // Mobile Menu Toggle
+let menu = document.querySelector('#menu-icon');
+let navlist = document.querySelector('.nav-links');
+let navLinks = document.querySelectorAll('.nav-links ul li a');
+
+// Function to toggle the mobile menu
+menu.onclick = () => {
+    menu.classList.toggle('bx-x'); // Change icon to 'X'
+    navlist.classList.toggle('active'); // Trigger animation
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target); // Stop observing after showing
-        }
+// Hide menu when a link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navlist.classList.remove('active'); // Hide the menu
+        menu.classList.remove('bx-x'); // Reset the icon
     });
-}, observerOptions);
+});
 
-window.onload = function() {
-    // Add class to trigger the fade-in effect when the page is fully loaded
-    document.querySelector('.contact-section').classList.add('fade-in');
+// Navbar scroll behavior (optional)
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Image Slideshow Background Change
+let images = [
+    'azalan bg.png',
+    'sfdfdf.jpg',
+    '2d.jpg',
+    'ac.jpg',
+    'out.jpg'
+];
+let currentIndex = 0;
+
+function changeBackground() {
+    currentIndex = (currentIndex + 1) % images.length;
+    
+    // Create a new div element for background fade
+    const fadeDiv = document.createElement('div');
+    fadeDiv.classList.add('background-fade');
+    fadeDiv.style.backgroundImage = `url('${images[currentIndex]}')`;
+    
+    // Append the fade div to the #home element
+    const homeElement = document.getElementById('home');
+    homeElement.appendChild(fadeDiv);
+    
+    // Trigger fade effect
+    setTimeout(() => {
+        fadeDiv.style.opacity = 1; // Make the new background fully visible
+    }, 100); // Small delay to ensure the background image is set before transitioning
+    
+    // Remove the old background after fade effect is completed
+    setTimeout(() => {
+        homeElement.removeChild(homeElement.querySelector('.background-fade:not([style*="opacity: 1"])'));
+    }, 1500); // After the fade is complete (1.5s)
+}
+
+// Change background every 5 seconds
+setInterval(changeBackground, 5000);
+
+// Initialize first background change
+changeBackground();
+
+// Search Bar Toggle
+function toggleSearch() {
+    var searchBar = document.querySelector('.search-bar');
+    searchBar.classList.toggle('expanded');
+    if (searchBar.classList.contains('expanded')) {
+        searchBar.focus(); // Focus the input field when expanded
+    }
+}
+
+// Scroll-up Button
+const scrollUpBtn = document.getElementById('scrollUpBtn');
+
+// Show the button when scrolling down 100px from the top
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollUpBtn.style.display = 'block'; // Show the button
+    } else {
+        scrollUpBtn.style.display = 'none'; // Hide the button when at the top
+    }
 };
 
-// Scroll Reveal Effect
-window.addEventListener('scroll', function() {
-let elements = document.querySelectorAll('.scroll-reveal');
-let scrollPosition = window.innerHeight + window.scrollY;
+// When the button is clicked, scroll to the top
+scrollUpBtn.onclick = function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, Opera
+};
 
-elements.forEach(function(element) {
-if (element.offsetTop < scrollPosition) {
-    element.classList.add('visible');
+// Gallery Modal Code
+const galleryImages = document.querySelectorAll('.gallery-item img');
+const showMoreBtn = document.getElementById('showMoreBtn');
+const initialVisibleCount = 6;
+
+for (let i = initialVisibleCount; i < galleryImages.length; i++) {
+    galleryImages[i].parentElement.style.display = 'none';
 }
-});
-});document.querySelector('.contact-form form').addEventListener('submit', function(event) {
-event.preventDefault(); // Prevent the form from submitting
 
-// Show the custom alert modal
-document.getElementById('custom-alert').style.display = 'flex';
-});
-
-// Close the modal, clear the form, and reset fields when clicking the OK button
-document.getElementById('close-alert').addEventListener('click', function() {
-document.getElementById('custom-alert').style.display = 'none'; // Hide the alert modal
-
-// Clear the contact form fields
-document.querySelector('.contact-form form').reset();
-});
-// Add event listener to the submit button
-document.querySelector('.reserve-button').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-    alert('Sorry, your message cannot be reviewed at the moment. Please try again later.');
-});
-
-function handleReserveClick(event) {
-    event.preventDefault(); // Prevent the default link behavior
-
-    // Check if the target element exists
-    const target = document.querySelector('#reservation');
-
-    if (target) {
-        // Scroll to the reservation section if it exists
-        target.scrollIntoView({ behavior: 'smooth' });
+let showMore = false;
+showMoreBtn.addEventListener('click', () => {
+    showMore = !showMore;
+    if (showMore) {
+        galleryImages.forEach(item => {
+            item.parentElement.style.display = 'block';
+        });
+        showMoreBtn.textContent = 'SEE LESS';
     } else {
-        // Handle the error if the target section is not found
-        alert('Sorry, the reservation page is currently unavailable.');
+        for (let i = initialVisibleCount; i < galleryImages.length; i++) {
+            galleryImages[i].parentElement.style.display = 'none';
+        }
+        showMoreBtn.textContent = 'SEE MORE';
     }
+});
+
+let currentIndexModal = 0;
+
+function openModal(index) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = galleryImages[index].src;
+    modal.classList.add('show');
+    currentIndexModal = index;
 }
 
-function handleReservationClick(event) {
-    event.preventDefault(); // Prevent the default anchor behavior
-
-    // Check if the target element exists
-    const target = document.querySelector('#reservation');
-
-    if (target) {
-        // Scroll to the reservation section if it exists
-        target.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        // Handle the error if the target section is not found
-        alert('Sorry, the reservation page is currently unavailable.');
-    }
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('show');
 }
-</script>
 
+document.getElementById('closeModal').addEventListener('click', closeModal);
+document.getElementById('modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modal')) {
+        closeModal();
+    }
+});
+
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openModal(index));
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndexModal > 0) {
+        openModal(currentIndexModal - 1);
+    }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndexModal < galleryImages.length - 1) {
+        openModal(currentIndexModal + 1);
+    }
+});
+
+// Keyboard navigation (Arrow keys)
+document.addEventListener('keydown', (event) => {
+    if (document.getElementById('modal').classList.contains('show')) { // Only listen if modal is open
+        if (event.key === 'ArrowLeft') { // Left arrow key for previous
+            if (currentIndexModal > 0) {
+                openModal(currentIndexModal - 1);
+            }
+        } else if (event.key === 'ArrowRight') { // Right arrow key for next
+            if (currentIndexModal < galleryImages.length - 1) {
+                openModal(currentIndexModal + 1);
+            }
+        }
+    }
+});
+//contact form
+         function redirectAfterSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+
+    fetch("/", {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then(() => {
+        window.location.href = "https://azalankamayan.site/thankyou.html";
+      })
+      .catch((error) => console.error("Error:", error));
+  }
+        </script> 
 </body>
 </html>
